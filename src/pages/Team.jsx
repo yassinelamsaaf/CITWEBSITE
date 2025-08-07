@@ -10,7 +10,7 @@ const Team = () => {
     president: {
       name: "ZRALLA Jinane",
       role: "Club's Chairman",
-      image: "/CITWEBSITE/images/Jinane.jpg",
+      image: "./images/Jinane.jpg",
       description: "Leading the club with vision and strategic planning",
       level: "executive",
     },
@@ -18,21 +18,21 @@ const Team = () => {
       {
         name: "OUCHEN Imane",
         role: "Vice Chairman",
-        image: "/CITWEBSITE/images/Imane.jpeg",
+        image: "./images/Imane.jpeg",
         description: "Supporting leadership and member coordination",
         level: "executive",
       },
       {
         name: "LAANAYA Mohamed Amine",
         role: "Treasurer",
-        image: "/CITWEBSITE/images/Image.jpg",
+        image: "./images/Image.jpg",
         description: "Managing financial operations and budget planning",
         level: "executive",
       },
       {
         name: "ANOU Oussama",
         role: "General Secretary",
-        image: "/CITWEBSITE/images/oussie.jpg",
+        image: "./images/oussie.jpg",
         description: "Administrative operations and documentation",
         level: "executive",
       },
@@ -42,7 +42,7 @@ const Team = () => {
         chief: {
           name: "MOUKIL Aya",
           role: "Events Cell Chief",
-          image: "/CITWEBSITE/images/aya.jpg",
+          image: "./images/aya.jpg",
           description:
             "Organizing workshops, competitions, and networking events",
         },
@@ -55,7 +55,7 @@ const Team = () => {
         chief: {
           name: "EL MAZOUNI Doha",
           role: "Sponsorship Cell Chief",
-          image: "/CITWEBSITE/images/doha.png",
+          image: "./images/doha.png",
           description: "Building partnerships and sponsorship relationships",
         },
         members: [
@@ -67,7 +67,7 @@ const Team = () => {
         chief: {
           name: "EL HACHIMI Athmane",
           role: "Technical Cell Chief",
-          image: "/CITWEBSITE/images/HACHIMI.jpg",
+          image: "./images/HACHIMI.jpg",
           description: "Overseeing technical projects and innovations",
         },
         members: [
@@ -78,7 +78,7 @@ const Team = () => {
         chief: {
           name: "KRIBBI Fatima Zahrae",
           role: "Media Cell Chief",
-          image: "/CITWEBSITE/images/kribbi.png",
+          image: "./images/kribbi.png",
           description: "Managing digital presence and communications",
         },
         members: [{ name: "Member 1", role: "Content Creator", image: null }],
@@ -87,7 +87,7 @@ const Team = () => {
         chief: {
           name: "SLIMANI Hatim",
           role: "Web Cell Chief",
-          image: "/CITWEBSITE/images/hatim.jpeg",
+          image: "./images/hatim.jpeg",
           description: "Web development and digital infrastructure",
         },
         members: [{ name: "Member 1", role: "Co-Chief", image: null }],
@@ -107,7 +107,7 @@ const Team = () => {
         chief: {
           name: "AZEHAF Sara",
           role: "Security Cell Chief",
-          image: "/CITWEBSITE/images/sara.jpg",
+          image: "./images/sara.jpg",
           description: "Cybersecurity and ethical hacking initiatives",
         },
         members: [{ name: "Member 1", role: "Security Analyst", image: null }],
@@ -116,7 +116,7 @@ const Team = () => {
         chief: {
           name: "LAKHAL Badr",
           role: "Data Cell Chief",
-          image: "/CITWEBSITE/images/badr.jpg",
+          image: "./images/badr.jpg",
           description: "Data science and machine learning projects",
         },
         members: [{ name: "Member 1", role: "Data Scientist", image: null }],
@@ -125,7 +125,7 @@ const Team = () => {
         chief: {
           name: "IKBI Abdelillah",
           role: "DevOps Cell Chief",
-          image: "/CITWEBSITE/images/IKBI.jpg",
+          image: "./images/IKBI.jpg",
           description: "Infrastructure and deployment automation",
         },
         members: [{ name: "Member 1", role: "DevOps Engineer", image: null }],
@@ -134,7 +134,7 @@ const Team = () => {
         chief: {
           name: "EL OUKILI Tarik",
           role: "Design Cell Chief",
-          image: "/CITWEBSITE/images/loukili.jpg",
+          image: "./images/loukili.jpg",
           description: "UI/UX design and visual identity",
         },
         members: [],
@@ -172,17 +172,19 @@ const Team = () => {
                 src={member.image}
                 alt={member.name}
                 className="w-full h-full object-cover"
+                loading="lazy"
                 onError={(e) => {
-                  e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                    member.name
-                  )}&background=1a1a2e&color=00ff41&size=128`;
+                  e.target.style.display = "none";
+                  e.target.nextSibling.style.display = "flex";
                 }}
               />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <i className="fas fa-user text-white text-2xl"></i>
-              </div>
-            )}
+            ) : null}
+            <div
+              className="w-full h-full flex items-center justify-center"
+              style={{ display: member.image ? "none" : "flex" }}
+            >
+              <i className="fas fa-user text-white text-2xl"></i>
+            </div>
           </div>
         </div>
 
@@ -277,10 +279,11 @@ const Team = () => {
                       src={teamStructure.president.image}
                       alt={teamStructure.president.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                       onError={(e) => {
-                        e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                          teamStructure.president.name
-                        )}&background=1a1a2e&color=00ff41&size=128`;
+                        e.target.style.display = "none";
+                        e.target.parentElement.innerHTML =
+                          '<div class="w-full h-full flex items-center justify-center"><i class="fas fa-user text-white text-4xl"></i></div>';
                       }}
                     />
                   </div>
@@ -319,10 +322,11 @@ const Team = () => {
                         src={exec.image}
                         alt={exec.name}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                         onError={(e) => {
-                          e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                            exec.name
-                          )}&background=1a1a2e&color=00ff41&size=128`;
+                          e.target.style.display = "none";
+                          e.target.parentElement.innerHTML =
+                            '<div class="w-full h-full flex items-center justify-center"><i class="fas fa-user text-white text-3xl"></i></div>';
                         }}
                       />
                     </div>
@@ -358,7 +362,9 @@ const Team = () => {
                     <div
                       key={cellName}
                       className={`${
-                        shouldCenter ? "xl:col-span-3 xl:flex xl:justify-center" : ""
+                        shouldCenter
+                          ? "xl:col-span-3 xl:flex xl:justify-center"
+                          : ""
                       }`}
                     >
                       <AnimateOnScroll
@@ -370,53 +376,55 @@ const Team = () => {
                             shouldCenter ? "xl:w-96" : ""
                           }`}
                         >
-                        {/* Cell Header */}
-                        <div className="mb-6">
-                          <h3 className="text-xl font-bold terminal-text mb-2 capitalize flex items-center">
-                            <div
-                              className={`w-4 h-4 bg-gradient-to-br ${getCellColor(
-                                cellName
-                              )} mr-3 transform rotate-45`}
-                            ></div>
-                            {cellName} Cell
-                          </h3>
-                        </div>
-
-                        {/* Chief */}
-                        <div className="mb-4">
-                          <MemberCard
-                            member={cellData.chief}
-                            isChief={true}
-                            cellColor={getCellColor(cellName)}
-                            delay={0}
-                          />
-                        </div>
-
-                        {/* Members */}
-                        {cellData.members.length > 0 && (
-                          <div
-                            className={`${
-                              cellData.members.length === 1
-                                ? "flex justify-center"
-                                : "grid grid-cols-2 gap-3"
-                            }`}
-                          >
-                            {cellData.members.map((member, memberIndex) => (
+                          {/* Cell Header */}
+                          <div className="mb-6">
+                            <h3 className="text-xl font-bold terminal-text mb-2 capitalize flex items-center">
                               <div
-                                key={memberIndex}
-                                className={
-                                  cellData.members.length === 1 ? "w-full" : ""
-                                }
-                              >
-                                <MemberCard
-                                  member={member}
-                                  cellColor={getCellColor(cellName)}
-                                  delay={memberIndex * 50}
-                                />
-                              </div>
-                            ))}
+                                className={`w-4 h-4 bg-gradient-to-br ${getCellColor(
+                                  cellName
+                                )} mr-3 transform rotate-45`}
+                              ></div>
+                              {cellName} Cell
+                            </h3>
                           </div>
-                        )}
+
+                          {/* Chief */}
+                          <div className="mb-4">
+                            <MemberCard
+                              member={cellData.chief}
+                              isChief={true}
+                              cellColor={getCellColor(cellName)}
+                              delay={0}
+                            />
+                          </div>
+
+                          {/* Members */}
+                          {cellData.members.length > 0 && (
+                            <div
+                              className={`${
+                                cellData.members.length === 1
+                                  ? "flex justify-center"
+                                  : "grid grid-cols-2 gap-3"
+                              }`}
+                            >
+                              {cellData.members.map((member, memberIndex) => (
+                                <div
+                                  key={memberIndex}
+                                  className={
+                                    cellData.members.length === 1
+                                      ? "w-full"
+                                      : ""
+                                  }
+                                >
+                                  <MemberCard
+                                    member={member}
+                                    cellColor={getCellColor(cellName)}
+                                    delay={memberIndex * 50}
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </AnimateOnScroll>
                     </div>
@@ -500,12 +508,19 @@ const Team = () => {
                       src={selectedMember.image}
                       alt={selectedMember.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling.style.display = "flex";
+                      }}
                     />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <i className="fas fa-user text-white text-4xl"></i>
-                    </div>
-                  )}
+                  ) : null}
+                  <div
+                    className="w-full h-full flex items-center justify-center"
+                    style={{ display: selectedMember.image ? "none" : "flex" }}
+                  >
+                    <i className="fas fa-user text-white text-4xl"></i>
+                  </div>
                 </div>
 
                 <p className="text-lg text-blue-300 font-mono mb-3">

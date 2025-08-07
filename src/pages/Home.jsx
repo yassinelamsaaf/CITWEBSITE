@@ -23,9 +23,10 @@ const Home = () => {
                       {/* Logo - properly centered and larger */}
                       <div className="absolute inset-4 flex items-center justify-center">
                         <img
-                          src="/CITWEBSITE/images/Logo CIT.png"
+                          src="./images/Logo CIT.png"
                           alt="CIT Club Logo"
                           className="w-full h-full object-contain transform -rotate-45 hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
                         />
                       </div>
 
@@ -118,7 +119,7 @@ const Home = () => {
                 >
                   <div className="glass p-6 border border-blue-400/30 hover:border-blue-400 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-blue-400/25">
                     <img
-                      src="/CITWEBSITE/images/DataCamp.png"
+                      src="./images/DataCamp.png"
                       alt="DataCamp"
                       className="w-full h-auto max-w-sm mx-auto filter brightness-90 group-hover:brightness-110 transition-all duration-300"
                     />
