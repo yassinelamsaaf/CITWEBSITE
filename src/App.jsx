@@ -6,7 +6,7 @@ import Team from './pages/Team';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/CITWEBSITE">
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
