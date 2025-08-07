@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import React from "react";
-import { AnimateOnScroll } from "../utilities/animations";
+import { AnimateOnScroll } from "../utilities/animations.jsx";
 
 const Home = () => {
   return (
