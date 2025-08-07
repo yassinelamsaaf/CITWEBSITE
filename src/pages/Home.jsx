@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import { AnimateOnScroll } from '../utilities/animations.jsx';
-import citLogo from '../assets/images/Logo CIT.png';
-import datacampLogo from '../assets/images/DataCamp.png';
+const citLogo = '/images/Logo CIT.png';
+const datacampLogo = '/images/DataCamp.png';
 
 const Home = () => {
   return (
@@ -121,24 +121,24 @@ const Home = () => {
               </div>
               
               {/* Partnership Details */}
-              <div className="order-1 lg:order-2 lg:col-span-3 flex flex-col h-full">
-                <div className="terminal-text flex-grow">
-                  <div className="text-green-400 text-2xl font-bold mb-6">
+              <div className="order-1 lg:order-2 lg:col-span-3 space-y-6">
+                <div className="terminal-text w-full">
+                  <div className="text-green-400 text-lg font-bold mb-4">
                     <span className="animate-pulse">{'>'}</span> Partnership Active
                   </div>
-                  <p className="text-gray-300 leading-relaxed text-2xl mb-8 w-full max-w-none">
+                  <p className="text-gray-300 leading-relaxed text-xl w-full max-w-none">
                     Learn Data Science & AI from the comfort of your browser, at your own pace with DataCamp's video tutorials & coding challenges on R, Python, Statistics & more.
                   </p>
                 </div>
                 
-                <div className="flex justify-start mt-auto">
+                <div className="flex justify-start">
                   <a 
                     href="https://www.datacamp.com/donates"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cyber-button inline-block py-4 px-8 font-mono uppercase tracking-wider transform hover:scale-105 transition-all duration-300"
                   >
-                    <span className="terminal-prompt">Join Now</span>
+                    <span className="terminal-prompt">Initialize Learning</span>
                   </a>
                 </div>
               </div>

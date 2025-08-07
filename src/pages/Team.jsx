@@ -10,7 +10,7 @@ const Team = () => {
     president: {
       name: "ZRALLA Jinane",
       role: "Club's Chairman",
-      image: "/src/assets/images/Jinane.jpg",
+      image: "/images/Jinane.jpg",
       description: "Leading the club with vision and strategic planning",
       level: "executive"
     },
@@ -18,21 +18,21 @@ const Team = () => {
       {
         name: "OUCHEN Imane", 
         role: "Vice Chairman",
-        image: "/src/assets/images/Imane.jpeg",
+        image: "/images/Imane.jpeg",
         description: "Supporting leadership and member coordination",
         level: "executive"
       },
       {
         name: "LAANAYA Mohamed Amine",
         role: "Treasurer", 
-        image: "/src/assets/images/Image.jpg",
+        image: "/images/Image.jpg",
         description: "Managing financial operations and budget planning",
         level: "executive"
       },
       {
         name: "ANOU Oussama",
         role: "General Secretary",
-        image: "/src/assets/images/oussie.jpg", 
+        image: "/images/oussie.jpg", 
         description: "Administrative operations and documentation",
         level: "executive"
       }
@@ -42,7 +42,7 @@ const Team = () => {
         chief: {
           name: "MOUKIL Aya",
           role: "Events Cell Chief",
-          image: "/src/assets/images/aya.jpg",
+          image: "/images/aya.jpg",
           description: "Organizing workshops, competitions, and networking events"
         },
         members: [
@@ -54,7 +54,7 @@ const Team = () => {
         chief: {
           name: "EL MAZOUNI Doha",
           role: "Sponsorship Cell Chief", 
-          image: "/src/assets/images/doha.png",
+          image: "/images/doha.png",
           description: "Building partnerships and sponsorship relationships"
         },
         members: [
@@ -66,7 +66,7 @@ const Team = () => {
         chief: {
           name: "EL HACHIMI Athmane",
           role: "Technical Cell Chief",
-          image: "/src/assets/images/HACHIMI.jpg",
+          image: "/images/HACHIMI.jpg",
           description: "Overseeing technical projects and innovations"
         },
         members: [
@@ -77,7 +77,7 @@ const Team = () => {
         chief: {
           name: "KRIBBI Fatima Zahrae",
           role: "Media Cell Chief",
-          image: "/src/assets/images/kribbi.png", 
+          image: "/images/kribbi.png", 
           description: "Managing digital presence and communications"
         },
         members: [
@@ -88,7 +88,7 @@ const Team = () => {
         chief: {
           name: "SLIMANI Hatim",
           role: "Web Cell Chief",
-          image: "/src/assets/images/hatim.jpeg",
+          image: "/images/hatim.jpeg",
           description: "Web development and digital infrastructure"
         },
         members: [
@@ -106,20 +106,11 @@ const Team = () => {
           { name: "Member 1", role: "Algorithm Specialist", image: null },
         ]
       },
-      design: {
-        chief: {
-          name: "EL OUKILI Tarik",
-          role: "Design Cell Chief",
-          image: "/src/assets/images/loukili.jpg",
-          description: "UI/UX design and visual identity"
-        },
-        members: []
-      },
       security: {
         chief: {
           name: "AZEHAF Sara", 
           role: "Security Cell Chief",
-          image: "/src/assets/images/sara.jpg",
+          image: "/images/sara.jpg",
           description: "Cybersecurity and ethical hacking initiatives"
         },
         members: [
@@ -130,7 +121,7 @@ const Team = () => {
         chief: {
           name: "LAKHAL Badr",
           role: "Data Cell Chief", 
-          image: "/src/assets/images/badr.jpg",
+          image: "/images/badr.jpg",
           description: "Data science and machine learning projects"
         },
         members: [
@@ -141,22 +132,30 @@ const Team = () => {
         chief: {
           name: "IKBI Abdelillah",
           role: "DevOps Cell Chief",
-          image: "/src/assets/images/IKBI.jpg", 
+          image: "/images/IKBI.jpg", 
           description: "Infrastructure and deployment automation"
         },
         members: [
           { name: "Member 1", role: "DevOps Engineer", image: null },
         ]
+      },
+      design: {
+        chief: {
+          name: "EL OUKILI Tarik",
+          role: "Design Cell Chief",
+          image: "/images/loukili.jpg",
+          description: "UI/UX design and visual identity"
+        },
+        members: []
       }
     }
   };
 
-  const MemberCard = ({ member, isChief = false, isLargeMember = false, cellColor = "from-blue-500 to-cyan-500", delay = 0 }) => (
+  const MemberCard = ({ member, isChief = false, cellColor = "from-blue-500 to-cyan-500", delay = 0 }) => (
     <AnimateOnScroll animation="scaleIn" delay={delay}>
       <div 
-        className={`cyber-card ${isLargeMember ? 'p-6' : 'p-4'} group cursor-pointer relative overflow-hidden ${
-          isChief ? 'border-2 border-green-400' : 
-          isLargeMember ? 'border-2 border-blue-400/50' : 'border border-blue-400/30'
+        className={`cyber-card p-4 group cursor-pointer relative overflow-hidden ${
+          isChief ? 'border-2 border-green-400' : 'border border-blue-400/30'
         }`}
         onClick={() => setSelectedMember(member)}
       >
@@ -165,17 +164,9 @@ const Team = () => {
           <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
         )}
         
-        {/* Special indicator for large member */}
-        {isLargeMember && !isChief && (
-          <div className="absolute top-2 right-2 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-        )}
-        
-        {/* Avatar - Larger for large members */}
+        {/* Avatar - Same size for all */}
         <div className="relative mb-4">
-          <div className={`${isLargeMember ? 'w-28 h-28' : 'w-24 h-24'} mx-auto bg-gradient-to-br ${cellColor} rounded-lg overflow-hidden border-2 ${
-            isChief ? 'border-green-400' : 
-            isLargeMember ? 'border-blue-400' : 'border-blue-400/50'
-          } group-hover:scale-110 transition-transform duration-300`}>
+          <div className={`w-24 h-24 mx-auto bg-gradient-to-br ${cellColor} rounded-lg overflow-hidden border-2 ${isChief ? 'border-green-400' : 'border-blue-400/50'} group-hover:scale-110 transition-transform duration-300`}>
             {member.image ? (
               <img 
                 src={member.image} 
@@ -187,18 +178,18 @@ const Team = () => {
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center">
-                <i className={`fas fa-user text-white ${isLargeMember ? 'text-3xl' : 'text-2xl'}`}></i>
+                <i className="fas fa-user text-white text-2xl"></i>
               </div>
             )}
           </div>
         </div>
         
-        {/* Info - Larger text for large members */}
+        {/* Info */}
         <div className="text-center">
-          <h4 className={`${isLargeMember ? 'text-base' : 'text-sm'} font-bold terminal-text mb-1 group-hover:text-green-400 transition-colors`}>
+          <h4 className="text-sm font-bold terminal-text mb-1 group-hover:text-green-400 transition-colors">
             {member.name}
           </h4>
-          <p className={`${isLargeMember ? 'text-sm' : 'text-xs'} text-gray-400 group-hover:text-blue-300 transition-colors`}>
+          <p className="text-xs text-gray-400 group-hover:text-blue-300 transition-colors">
             {member.role}
           </p>
         </div>
@@ -337,92 +328,55 @@ const Team = () => {
               Specialized Cells
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-              {Object.entries(teamStructure.cells)
-                .filter(([cellName]) => cellName !== 'design') // Exclude design cell from main grid
-                .map(([cellName, cellData], cellIndex) => (
-                <AnimateOnScroll key={cellName} animation="scaleIn" delay={cellIndex * 50 + 400}>
-                  <div className="cyber-card p-6 border border-purple-400/30 hover:border-purple-400 transition-all duration-300">
-                    {/* Cell Header */}
-                    <div className="mb-6">
-                      <h3 className="text-xl font-bold terminal-text mb-2 capitalize flex items-center">
-                        <div className={`w-4 h-4 bg-gradient-to-br ${getCellColor(cellName)} mr-3 transform rotate-45`}></div>
-                        {cellName} Cell
-                      </h3>
-                    </div>
-
-                    {/* Chief */}
-                    <div className="mb-4">
-                      <MemberCard 
-                        member={cellData.chief} 
-                        isChief={true} 
-                        cellColor={getCellColor(cellName)}
-                        delay={0}
-                      />
-                    </div>
-
-                    {/* Members */}
-                    {cellData.members.length > 0 && (
-                      <div className="grid grid-cols-2 gap-3">
-                        {cellData.members.map((member, memberIndex) => (
-                          <MemberCard 
-                            key={memberIndex}
-                            member={member} 
-                            cellColor={getCellColor(cellName)}
-                            delay={memberIndex * 50}
-                            isLargeMember={cellData.members.length === 1} // Make member card large if only one member
-                          />
-                        ))}
-                        {/* Empty space if only one member to maintain grid layout */}
-                        {cellData.members.length === 1 && <div></div>}
+              {Object.entries(teamStructure.cells).map(([cellName, cellData], cellIndex) => {
+                const isLastCell = cellIndex === Object.entries(teamStructure.cells).length - 1;
+                const totalCells = Object.entries(teamStructure.cells).length;
+                
+                return (
+                  <AnimateOnScroll key={cellName} animation="scaleIn" delay={cellIndex * 50 + 400}>
+                    <div className={`cyber-card p-6 border border-purple-400/30 hover:border-purple-400 transition-all duration-300 ${
+                      isLastCell && totalCells % 3 !== 0 ? 'xl:col-start-2' : ''
+                    }`}>
+                      {/* Cell Header */}
+                      <div className="mb-6">
+                        <h3 className="text-xl font-bold terminal-text mb-2 capitalize flex items-center">
+                          <div className={`w-4 h-4 bg-gradient-to-br ${getCellColor(cellName)} mr-3 transform rotate-45`}></div>
+                          {cellName} Cell
+                        </h3>
                       </div>
-                    )}
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-            
-            {/* Design Cell - Centered in last row */}
-            <div className="flex justify-center mt-8">
-              <div className="w-full max-w-sm">
-                <AnimateOnScroll animation="scaleIn" delay={500}>
-                  <div className="cyber-card p-6 border border-purple-400/30 hover:border-purple-400 transition-all duration-300">
-                    {/* Cell Header */}
-                    <div className="mb-6">
-                      <h3 className="text-xl font-bold terminal-text mb-2 capitalize flex items-center justify-center">
-                        <div className={`w-4 h-4 bg-gradient-to-br ${getCellColor('design')} mr-3 transform rotate-45`}></div>
-                        Design Cell
-                      </h3>
-                    </div>
 
-                    {/* Chief */}
-                    <div className="mb-4">
-                      <MemberCard 
-                        member={teamStructure.cells.design.chief} 
-                        isChief={true} 
-                        cellColor={getCellColor('design')}
-                        delay={0}
-                      />
-                    </div>
-
-                    {/* Members */}
-                    {teamStructure.cells.design.members.length > 0 && (
-                      <div className="grid grid-cols-2 gap-3">
-                        {teamStructure.cells.design.members.map((member, memberIndex) => (
-                          <MemberCard 
-                            key={memberIndex}
-                            member={member} 
-                            cellColor={getCellColor('design')}
-                            delay={memberIndex * 50}
-                            isLargeMember={teamStructure.cells.design.members.length === 1}
-                          />
-                        ))}
-                        {/* Empty space if only one member to maintain grid layout */}
-                        {teamStructure.cells.design.members.length === 1 && <div></div>}
+                      {/* Chief */}
+                      <div className="mb-4">
+                        <MemberCard 
+                          member={cellData.chief} 
+                          isChief={true} 
+                          cellColor={getCellColor(cellName)}
+                          delay={0}
+                        />
                       </div>
-                    )}
-                  </div>
-                </AnimateOnScroll>
-              </div>
+
+                      {/* Members */}
+                      {cellData.members.length > 0 && (
+                        <div className={`${
+                          cellData.members.length === 1 
+                            ? 'flex justify-center' 
+                            : 'grid grid-cols-2 gap-3'
+                        }`}>
+                          {cellData.members.map((member, memberIndex) => (
+                            <div key={memberIndex} className={cellData.members.length === 1 ? 'w-full' : ''}>
+                              <MemberCard 
+                                member={member} 
+                                cellColor={getCellColor(cellName)}
+                                delay={memberIndex * 50}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </AnimateOnScroll>
+                );
+              })}
             </div>
           </div>
         </AnimateOnScroll>
