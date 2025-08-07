@@ -109,7 +109,7 @@ const Home = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
               {/* DataCamp Logo */}
-              <div className="order-2 lg:order-1 lg:col-span-2">
+              <div className="order-1 lg:order-1 lg:col-span-2">
                 <a
                   href="https://www.datacamp.com/donates"
                   target="_blank"
@@ -127,7 +127,7 @@ const Home = () => {
               </div>
 
               {/* Partnership Details */}
-              <div className="order-1 lg:order-2 lg:col-span-3 space-y-6">
+              <div className="order-2 lg:order-2 lg:col-span-3 space-y-6">
                 <div className="terminal-text w-full">
                   <div className="text-green-400 text-lg font-bold mb-4">
                     <span className="animate-pulse">{">"}</span> Partnership

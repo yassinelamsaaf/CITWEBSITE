@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="cyber-button p-2 rounded-md text-green-400 hover:text-white hover:bg-green-400/20 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300"
+              className="p-2 rounded-md text-green-400 border border-green-400/50 hover:text-black hover:bg-green-400 hover:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300 transform hover:scale-105"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (

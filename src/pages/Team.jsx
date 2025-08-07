@@ -329,13 +329,14 @@ const Team = () => {
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {Object.entries(teamStructure.cells).map(([cellName, cellData], cellIndex) => {
-                const isLastCell = cellIndex === Object.entries(teamStructure.cells).length - 1;
                 const totalCells = Object.entries(teamStructure.cells).length;
+                const isLastCell = cellIndex === totalCells - 1;
+                const shouldCenter = totalCells % 3 === 1 && isLastCell;
                 
                 return (
                   <AnimateOnScroll key={cellName} animation="scaleIn" delay={cellIndex * 50 + 400}>
                     <div className={`cyber-card p-6 border border-purple-400/30 hover:border-purple-400 transition-all duration-300 ${
-                      isLastCell && totalCells % 3 !== 0 ? 'xl:col-start-2' : ''
+                      shouldCenter ? 'xl:col-start-2 xl:col-end-3' : ''
                     }`}>
                       {/* Cell Header */}
                       <div className="mb-6">
