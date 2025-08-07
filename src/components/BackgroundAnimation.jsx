@@ -11,6 +11,11 @@ const BackgroundAnimation = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0">
+        <div className="grid-background"></div>
+      </div>
+      
       {/* Floating particles - increased count and smoother animations */}
       <div className="absolute inset-0 overflow-hidden">
         {Array.from({ length: 20 }, (_, i) => (
