@@ -17,24 +17,6 @@ const Layout = ({ children }) => {
       {/* Background Animation Component */}
       <BackgroundAnimation />
       
-      {/* Animated background elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-500/5 rounded-full blur-3xl animate-ping"></div>
-      </div>
-      
-      {/* Matrix-style grid overlay */}
-      <div className="fixed inset-0 opacity-20 pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
-
       <Navbar />
       <main className="flex-grow pt-16 relative z-10">
         {children}

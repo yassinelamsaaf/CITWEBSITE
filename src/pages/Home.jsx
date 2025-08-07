@@ -1,7 +1,6 @@
-import Layout from '../components/Layout';
-import { AnimateOnScroll } from '../utilities/animations.jsx';
-const citLogo = '/images/Logo CIT.png';
-const datacampLogo = '/images/DataCamp.png';
+import Layout from "../components/Layout";
+import React from "react";
+import { AnimateOnScroll } from "../utilities/animations";
 
 const Home = () => {
   return (
@@ -18,18 +17,18 @@ const Home = () => {
                   <div className="w-72 h-72 relative">
                     {/* Outer glow effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 rounded-none transform rotate-45 blur-lg opacity-30 animate-pulse"></div>
-                    
+
                     {/* Main hexagonal container */}
                     <div className="relative w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 transform rotate-45 border-4 border-green-400 shadow-2xl shadow-green-400/25">
                       {/* Logo - properly centered and larger */}
                       <div className="absolute inset-4 flex items-center justify-center">
-                        <img 
-                          src={citLogo} 
-                          alt="CIT Club Logo" 
+                        <img
+                          src="/images/Logo CIT.png"
+                          alt="CIT Club Logo"
                           className="w-full h-full object-contain transform -rotate-45 hover:scale-110 transition-transform duration-500"
                         />
                       </div>
-                      
+
                       {/* Animated corner accents */}
                       <div className="absolute -top-3 -left-3 w-8 h-8 bg-green-400 transform rotate-45 animate-pulse"></div>
                       <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-400 transform rotate-45 animate-pulse delay-200"></div>
@@ -45,13 +44,15 @@ const Home = () => {
                 <div className="glass-dark p-10 border-l-4 border-green-400 max-w-full w-full">
                   <div className="font-mono text-left">
                     <div className="text-green-400 text-lg mb-4 animate-pulse">
-                      <span className="text-2xl">{'>'}</span> Initializing CIT Club...
+                      <span className="text-2xl">{">"}</span> Initializing CIT
+                      Club...
                     </div>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold terminal-text glow-text mb-6 leading-tight">
                       Club Informatique & Telecoms
                     </h1>
                     <div className="text-green-400 text-lg animate-pulse">
-                      <span className="text-2xl">{'>'}</span> Status: Operational since 1996
+                      <span className="text-2xl">{">"}</span> Status:
+                      Operational since 1996
                     </div>
                   </div>
                 </div>
@@ -68,7 +69,7 @@ const Home = () => {
               <div className="absolute top-4 right-4 text-green-400/30 font-mono text-xs">
                 {`// mission.cpp`}
               </div>
-              
+
               <div className="relative z-10">
                 <h2 className="text-3xl font-bold terminal-text mb-8 flex items-center">
                   <span className="text-green-400 mr-3">$</span>
@@ -76,7 +77,10 @@ const Home = () => {
                   <span className="text-blue-400 ml-2">mission.txt</span>
                 </h2>
                 <div className="terminal-text text-green-300 leading-relaxed text-xl border-l-2 border-green-400/50 pl-8 py-4">
-                  The CIT club is the first IT club in Morocco and has as a goal to gather passionate students reach their goals in IT by offering courses throughout the year and make them compete in competitions.
+                  The CIT club is the first IT club in Morocco and has as a goal
+                  to gather passionate students reach their goals in IT by
+                  offering courses throughout the year and make them compete in
+                  competitions.
                 </div>
               </div>
             </div>
@@ -93,46 +97,51 @@ const Home = () => {
                 <span className="text-blue-400 mx-2">:</span>
                 <span className="text-purple-400">~</span>
                 <span className="text-green-400 ml-2">$</span>
-                <span className="text-gray-300 ml-2">ls -la collaborators/</span>
+                <span className="text-gray-300 ml-2">
+                  ls -la collaborators/
+                </span>
               </div>
               <h2 className="text-3xl font-bold terminal-text mb-2">
                 <span className="text-green-400">&gt;</span>
                 <span className="text-blue-400 ml-2">DataCamp Partnership</span>
               </h2>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
               {/* DataCamp Logo */}
               <div className="order-2 lg:order-1 lg:col-span-2">
-                <a 
+                <a
                   href="https://www.datacamp.com/donates"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block group"
                 >
                   <div className="glass p-6 border border-blue-400/30 hover:border-blue-400 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-blue-400/25">
-                    <img 
-                      src={datacampLogo} 
-                      alt="DataCamp" 
+                    <img
+                      src="/images/DataCamp.png"
+                      alt="DataCamp"
                       className="w-full h-auto max-w-sm mx-auto filter brightness-90 group-hover:brightness-110 transition-all duration-300"
                     />
                   </div>
                 </a>
               </div>
-              
+
               {/* Partnership Details */}
               <div className="order-1 lg:order-2 lg:col-span-3 space-y-6">
                 <div className="terminal-text w-full">
                   <div className="text-green-400 text-lg font-bold mb-4">
-                    <span className="animate-pulse">{'>'}</span> Partnership Active
+                    <span className="animate-pulse">{">"}</span> Partnership
+                    Active
                   </div>
                   <p className="text-gray-300 leading-relaxed text-xl w-full max-w-none">
-                    Learn Data Science & AI from the comfort of your browser, at your own pace with DataCamp's video tutorials & coding challenges on R, Python, Statistics & more.
+                    Learn Data Science & AI from the comfort of your browser, at
+                    your own pace with DataCamp's video tutorials & coding
+                    challenges on R, Python, Statistics & more.
                   </p>
                 </div>
-                
+
                 <div className="flex justify-start">
-                  <a 
+                  <a
                     href="https://www.datacamp.com/donates"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -153,45 +162,55 @@ const Home = () => {
               {
                 icon: "fas fa-users",
                 title: "Community",
-                description: "Join a passionate community of IT students and professionals",
+                description:
+                  "Join a passionate community of IT students and professionals",
                 color: "from-blue-500 to-cyan-500",
-                delay: 0
+                delay: 0,
               },
               {
-                icon: "fas fa-graduation-cap", 
+                icon: "fas fa-graduation-cap",
                 title: "Learning",
                 description: "Access courses and workshops throughout the year",
                 color: "from-green-500 to-emerald-500",
-                delay: 100
+                delay: 100,
               },
               {
                 icon: "fas fa-trophy",
-                title: "Competitions", 
-                description: "Participate in exciting IT competitions and challenges",
+                title: "Competitions",
+                description:
+                  "Participate in exciting IT competitions and challenges",
                 color: "from-purple-500 to-violet-500",
-                delay: 200
-              }
+                delay: 200,
+              },
             ].map((feature, index) => (
-              <AnimateOnScroll key={index} animation="scaleIn" delay={feature.delay + 800}>
+              <AnimateOnScroll
+                key={index}
+                animation="scaleIn"
+                delay={feature.delay + 800}
+              >
                 <div className="cyber-card p-6 h-full group">
                   {/* Icon */}
-                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-300 relative`}>
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-300 relative`}
+                  >
                     <i className={`${feature.icon} text-2xl text-white`}></i>
-                    
+
                     {/* Corner accents */}
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 transform rotate-45"></div>
                     <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-blue-400 transform rotate-45"></div>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold terminal-text mb-3 group-hover:text-green-400 transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
                     {feature.description}
                   </p>
-                  
+
                   {/* Hover line effect */}
-                  <div className={`h-1 w-0 bg-gradient-to-r ${feature.color} mt-4 group-hover:w-full transition-all duration-500`}></div>
+                  <div
+                    className={`h-1 w-0 bg-gradient-to-r ${feature.color} mt-4 group-hover:w-full transition-all duration-500`}
+                  ></div>
                 </div>
               </AnimateOnScroll>
             ))}

@@ -70,137 +70,6 @@ body::after {
   50% { opacity: 1; }
 }
 
-/* Circuit-like grid overlay */
-.cyber-grid {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  background-image: 
-    linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: grid-move 30s linear infinite;
-}
-
-@keyframes grid-move {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
-}
-
-/* Floating orbs animation */
-.floating-orb {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.orb-1 {
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
-  top: 10%;
-  left: 80%;
-  animation: float-orb-1 15s ease-in-out infinite;
-}
-
-.orb-2 {
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
-  top: 60%;
-  left: 10%;
-  animation: float-orb-2 12s ease-in-out infinite reverse;
-}
-
-.orb-3 {
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-  top: 80%;
-  left: 70%;
-  animation: float-orb-3 18s ease-in-out infinite;
-}
-
-@keyframes float-orb-1 {
-  0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
-  33% { transform: translateY(-30px) translateX(20px) scale(1.1); }
-  66% { transform: translateY(30px) translateX(-20px) scale(0.9); }
-}
-
-@keyframes float-orb-2 {
-  0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
-  50% { transform: translateY(-40px) translateX(30px) scale(1.2); }
-}
-
-@keyframes float-orb-3 {
-  0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
-  25% { transform: translateY(20px) translateX(-15px) scale(1.1); }
-  75% { transform: translateY(-25px) translateX(25px) scale(0.8); }
-}
-
-/* Data streams animation */
-.data-stream {
-  position: fixed;
-  width: 2px;
-  height: 100px;
-  background: linear-gradient(to bottom, transparent, rgba(0, 255, 65, 0.8), transparent);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.stream-1 {
-  left: 15%;
-  animation: data-fall-1 8s linear infinite;
-}
-
-.stream-2 {
-  left: 35%;
-  animation: data-fall-2 12s linear infinite;
-}
-
-.stream-3 {
-  left: 65%;
-  animation: data-fall-3 10s linear infinite;
-}
-
-.stream-4 {
-  left: 85%;
-  animation: data-fall-4 15s linear infinite;
-}
-
-@keyframes data-fall-1 {
-  0% { top: -100px; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 100vh; opacity: 0; }
-}
-
-@keyframes data-fall-2 {
-  0% { top: -100px; opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { top: 100vh; opacity: 0; }
-}
-
-@keyframes data-fall-3 {
-  0% { top: -100px; opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { top: 100vh; opacity: 0; }
-}
-
-@keyframes data-fall-4 {
-  0% { top: -100px; opacity: 0; }
-  25% { opacity: 1; }
-  75% { opacity: 1; }
-  100% { top: 100vh; opacity: 0; }
-}
-
 /* Terminal text styling with enhanced glow effects */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'JetBrains Mono', monospace;
@@ -401,29 +270,6 @@ button:disabled {
   50% { border-color: #00ff41; }
 }
 
-/* Matrix rain effect */
-.matrix-bg {
-  position: relative;
-  overflow: hidden;
-}
-
-.matrix-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='14' fill='%2300ff41' opacity='0.1'%3E01100101%3C/text%3E%3Ctext x='10' y='40' font-family='monospace' font-size='14' fill='%2300ff41' opacity='0.1'%3E11001010%3C/text%3E%3Ctext x='10' y='60' font-family='monospace' font-size='14' fill='%2300ff41' opacity='0.1'%3E01010011%3C/text%3E%3Ctext x='10' y='80' font-family='monospace' font-size='14' fill='%2300ff41' opacity='0.1'%3E10110010%3C/text%3E%3C/svg%3E");
-  animation: matrix-fall 20s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes matrix-fall {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
 /* Card hover effects */
 .cyber-card {
   background: linear-gradient(145deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
@@ -520,12 +366,6 @@ button:disabled {
   25% { transform: translateY(-15px) translateX(8px); opacity: 0.6; }
   50% { transform: translateY(-25px) translateX(0px); opacity: 0.8; }
   75% { transform: translateY(-15px) translateX(-8px); opacity: 0.6; }
-}
-
-/* Grid movement animation */
-@keyframes grid-move {
-  0% { transform: translateX(0) translateY(0); }
-  100% { transform: translateX(50px) translateY(50px); }
 }
 
 /* Dash animation for SVG paths */
