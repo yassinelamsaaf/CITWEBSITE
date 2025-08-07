@@ -8,7 +8,7 @@ const Cells = () => {
     {
       id: "web",
       title: "Web Cell",
-      image: "/images/web.png",
+      image: "/CITWEBSITE/images/web.png",
       description:
         "The Web Cell focuses on web development and related technologies. It deals with designing, building, and maintaining websites, web applications, and online services. This domain covers various aspects, including front-end development (user interface and user experience), back-end development (server-side logic and databases), web security, and web performance optimization.",
       color: "from-blue-500 to-cyan-500",
@@ -32,7 +32,7 @@ const Cells = () => {
     {
       id: "data",
       title: "Data Cell",
-      image: "/images/data.png",
+      image: "/CITWEBSITE/images/data.png",
       description:
         "The Data Cell is centered around data management and analysis. It involves collecting, storing, processing, and analyzing data to extract valuable insights and support decision-making processes. Data engineering, data science, data visualization, and database management are key components of this domain.",
       color: "from-green-500 to-emerald-500",
@@ -56,7 +56,7 @@ const Cells = () => {
     {
       id: "devops",
       title: "DevOps Cell",
-      image: "/images/DevOps.png",
+      image: "/CITWEBSITE/images/DevOps.png",
       description:
         "DevOps stands for Development and Operations. The DevOps Cell aims to bridge the gap between software development and IT operations. It focuses on automating and streamlining the software development lifecycle, from code writing to deployment and maintenance. DevOps practices emphasize collaboration, continuous integration and continuous delivery (CI/CD), infrastructure management, and monitoring.",
       color: "from-orange-500 to-red-500",
@@ -80,7 +80,7 @@ const Cells = () => {
     {
       id: "design",
       title: "Design Cell",
-      image: "/images/design.png",
+      image: "/CITWEBSITE/images/design.png",
       description:
         "The Design Cell revolves around various aspects of visual and user experience design. It involves creating aesthetically pleasing and functional designs for products, services, or interfaces. This domain includes graphic design, user interface (UI) design, user experience (UX) design, interaction design, and prototyping.",
       color: "from-pink-500 to-purple-500",
@@ -110,7 +110,7 @@ const Cells = () => {
     {
       id: "security",
       title: "Security Cell",
-      image: "/images/sec.png",
+      image: "/CITWEBSITE/images/sec.png",
       description:
         "The Security Cell is dedicated to safeguarding systems, networks, and data from potential threats and unauthorized access. It deals with information security, network security, application security, and cloud security. Professionals in this domain work on implementing security measures, conducting vulnerability assessments, and responding to security incidents.",
       color: "from-red-500 to-orange-600",
@@ -140,7 +140,7 @@ const Cells = () => {
     {
       id: "algorithmic",
       title: "Algorithmic Cell",
-      image: "/images/algor.png",
+      image: "/CITWEBSITE/images/algor.png",
       description:
         "The Algorithmic Cell focuses on algorithms and computational problem-solving. It deals with designing and analyzing algorithms to solve complex computational problems efficiently. This domain is closely related to computer science and is crucial for various applications, including artificial intelligence, machine learning, optimization, and data analysis.",
       color: "from-violet-500 to-purple-600",

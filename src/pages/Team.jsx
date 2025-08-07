@@ -10,7 +10,7 @@ const Team = () => {
     president: {
       name: "ZRALLA Jinane",
       role: "Club's Chairman",
-      image: "/images/Jinane.jpg",
+      image: "/CITWEBSITE/images/Jinane.jpg",
       description: "Leading the club with vision and strategic planning",
       level: "executive"
     },
@@ -18,21 +18,21 @@ const Team = () => {
       {
         name: "OUCHEN Imane", 
         role: "Vice Chairman",
-        image: "/images/Imane.jpeg",
+        image: "/CITWEBSITE/images/Imane.jpeg",
         description: "Supporting leadership and member coordination",
         level: "executive"
       },
       {
         name: "LAANAYA Mohamed Amine",
         role: "Treasurer", 
-        image: "/images/Image.jpg",
+        image: "/CITWEBSITE/images/Image.jpg",
         description: "Managing financial operations and budget planning",
         level: "executive"
       },
       {
         name: "ANOU Oussama",
         role: "General Secretary",
-        image: "/images/oussie.jpg", 
+        image: "/CITWEBSITE/images/oussie.jpg", 
         description: "Administrative operations and documentation",
         level: "executive"
       }
@@ -42,7 +42,7 @@ const Team = () => {
         chief: {
           name: "MOUKIL Aya",
           role: "Events Cell Chief",
-          image: "/images/aya.jpg",
+          image: "/CITWEBSITE/images/aya.jpg",
           description: "Organizing workshops, competitions, and networking events"
         },
         members: [
@@ -54,7 +54,7 @@ const Team = () => {
         chief: {
           name: "EL MAZOUNI Doha",
           role: "Sponsorship Cell Chief", 
-          image: "/images/doha.png",
+          image: "/CITWEBSITE/images/doha.png",
           description: "Building partnerships and sponsorship relationships"
         },
         members: [
@@ -66,7 +66,7 @@ const Team = () => {
         chief: {
           name: "EL HACHIMI Athmane",
           role: "Technical Cell Chief",
-          image: "/images/HACHIMI.jpg",
+          image: "/CITWEBSITE/images/HACHIMI.jpg",
           description: "Overseeing technical projects and innovations"
         },
         members: [
@@ -77,7 +77,7 @@ const Team = () => {
         chief: {
           name: "KRIBBI Fatima Zahrae",
           role: "Media Cell Chief",
-          image: "/images/kribbi.png", 
+          image: "/CITWEBSITE/images/kribbi.png", 
           description: "Managing digital presence and communications"
         },
         members: [
@@ -88,7 +88,7 @@ const Team = () => {
         chief: {
           name: "SLIMANI Hatim",
           role: "Web Cell Chief",
-          image: "/images/hatim.jpeg",
+          image: "/CITWEBSITE/images/hatim.jpeg",
           description: "Web development and digital infrastructure"
         },
         members: [
@@ -110,7 +110,7 @@ const Team = () => {
         chief: {
           name: "AZEHAF Sara", 
           role: "Security Cell Chief",
-          image: "/images/sara.jpg",
+          image: "/CITWEBSITE/images/sara.jpg",
           description: "Cybersecurity and ethical hacking initiatives"
         },
         members: [
@@ -121,7 +121,7 @@ const Team = () => {
         chief: {
           name: "LAKHAL Badr",
           role: "Data Cell Chief", 
-          image: "/images/badr.jpg",
+          image: "/CITWEBSITE/images/badr.jpg",
           description: "Data science and machine learning projects"
         },
         members: [
@@ -132,7 +132,7 @@ const Team = () => {
         chief: {
           name: "IKBI Abdelillah",
           role: "DevOps Cell Chief",
-          image: "/images/IKBI.jpg", 
+          image: "/CITWEBSITE/images/IKBI.jpg", 
           description: "Infrastructure and deployment automation"
         },
         members: [
@@ -143,7 +143,7 @@ const Team = () => {
         chief: {
           name: "EL OUKILI Tarik",
           role: "Design Cell Chief",
-          image: "/images/loukili.jpg",
+          image: "/CITWEBSITE/images/loukili.jpg",
           description: "UI/UX design and visual identity"
         },
         members: []
