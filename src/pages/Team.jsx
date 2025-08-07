@@ -406,7 +406,7 @@ const Team = () => {
 
                     {/* Members */}
                     {teamStructure.cells.design.members.length > 0 && (
-                      <div className={teamStructure.cells.design.members.length === 1 ? "flex justify-center" : "grid grid-cols-2 gap-3"}>
+                      <div className="grid grid-cols-2 gap-3">
                         {teamStructure.cells.design.members.map((member, memberIndex) => (
                           <MemberCard 
                             key={memberIndex}
@@ -416,6 +416,8 @@ const Team = () => {
                             isLargeMember={teamStructure.cells.design.members.length === 1}
                           />
                         ))}
+                        {/* Empty space if only one member to maintain grid layout */}
+                        {teamStructure.cells.design.members.length === 1 && <div></div>}
                       </div>
                     )}
                   </div>
