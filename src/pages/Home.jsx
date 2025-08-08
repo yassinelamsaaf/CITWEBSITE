@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import React from "react";
 import { AnimateOnScroll } from "../utilities/animations.jsx";
+import { homeData } from "../data/HomeData.js";
 
 const Home = () => {
   return (
@@ -23,8 +24,8 @@ const Home = () => {
                       {/* Logo - properly centered and larger */}
                       <div className="absolute inset-4 flex items-center justify-center">
                         <img
-                          src="./images/Logo CIT.png"
-                          alt="CIT Club Logo"
+                          src={homeData.hero.logo.src}
+                          alt={homeData.hero.logo.alt}
                           className="w-full h-full object-contain transform -rotate-45 hover:scale-110 transition-transform duration-500"
                           loading="lazy"
                         />
@@ -45,15 +46,13 @@ const Home = () => {
                 <div className="glass-dark p-10 border-l-4 border-green-400 max-w-full w-full">
                   <div className="font-mono text-left">
                     <div className="text-green-400 text-lg mb-4 animate-pulse">
-                      <span className="text-2xl">{">"}</span> Initializing CIT
-                      Club...
+                      <span className="text-2xl">{">"}</span> {homeData.hero.title.initialization}
                     </div>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold terminal-text glow-text mb-6 leading-tight">
-                      Club Informatique & Telecoms
+                      {homeData.hero.title.main}
                     </h1>
                     <div className="text-green-400 text-lg animate-pulse">
-                      <span className="text-2xl">{">"}</span> Status:
-                      Operational since 1996
+                      <span className="text-2xl">{">"}</span> {homeData.hero.title.status}
                     </div>
                   </div>
                 </div>
@@ -68,20 +67,17 @@ const Home = () => {
             <div className="glass-dark p-12 border border-green-400/30 max-w-6xl mx-auto relative overflow-hidden">
               {/* Code-like decoration */}
               <div className="absolute top-4 right-4 text-green-400/30 font-mono text-xs">
-                {`// mission.cpp`}
+                {`// ${homeData.mission.title.replace('.txt', '.cpp')}`}
               </div>
 
               <div className="relative z-10">
                 <h2 className="text-3xl font-bold terminal-text mb-8 flex items-center">
                   <span className="text-green-400 mr-3">$</span>
                   <span className="text-purple-400">cat</span>
-                  <span className="text-blue-400 ml-2">mission.txt</span>
+                  <span className="text-blue-400 ml-2">{homeData.mission.title}</span>
                 </h2>
                 <div className="terminal-text text-green-300 leading-relaxed text-xl border-l-2 border-green-400/50 pl-8 py-4">
-                  The CIT club is the first IT club in Morocco and has as a goal
-                  to gather passionate students reach their goals in IT by
-                  offering courses throughout the year and make them compete in
-                  competitions.
+                  {homeData.mission.content}
                 </div>
               </div>
             </div>
@@ -104,7 +100,7 @@ const Home = () => {
               </div>
               <h2 className="text-3xl font-bold terminal-text mb-2">
                 <span className="text-green-400">&gt;</span>
-                <span className="text-blue-400 ml-2">DataCamp Partnership</span>
+                <span className="text-blue-400 ml-2">{homeData.partnerships.datacamp.title}</span>
               </h2>
             </div>
 
@@ -112,15 +108,15 @@ const Home = () => {
               {/* DataCamp Logo */}
               <div className="order-1 lg:order-1 lg:col-span-2">
                 <a
-                  href="https://www.datacamp.com/donates"
+                  href={homeData.partnerships.datacamp.link.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block group"
                 >
                   <div className="glass p-6 border border-blue-400/30 hover:border-blue-400 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-blue-400/25">
                     <img
-                      src="./images/DataCamp.png"
-                      alt="DataCamp"
+                      src={homeData.partnerships.datacamp.logo.src}
+                      alt={homeData.partnerships.datacamp.logo.alt}
                       className="w-full h-auto max-w-sm mx-auto filter brightness-90 group-hover:brightness-110 transition-all duration-300"
                     />
                   </div>
@@ -131,24 +127,21 @@ const Home = () => {
               <div className="order-2 lg:order-2 lg:col-span-3 space-y-6">
                 <div className="terminal-text w-full">
                   <div className="text-green-400 text-lg font-bold mb-4">
-                    <span className="animate-pulse">{">"}</span> Partnership
-                    Active
+                    <span className="animate-pulse">{">"}</span> {homeData.partnerships.datacamp.status}
                   </div>
                   <p className="text-gray-300 leading-relaxed text-xl w-full max-w-none">
-                    Learn Data Science & AI from the comfort of your browser, at
-                    your own pace with DataCamp's video tutorials & coding
-                    challenges on R, Python, Statistics & more.
+                    {homeData.partnerships.datacamp.description}
                   </p>
                 </div>
 
                 <div className="flex justify-start">
                   <a
-                    href="https://www.datacamp.com/donates"
+                    href={homeData.partnerships.datacamp.link.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cyber-button inline-block py-4 px-8 font-mono uppercase tracking-wider transform hover:scale-105 transition-all duration-300"
                   >
-                    <span className="terminal-prompt">Initialize Learning</span>
+                    <span className="terminal-prompt">{homeData.partnerships.datacamp.link.text}</span>
                   </a>
                 </div>
               </div>
@@ -159,31 +152,7 @@ const Home = () => {
         {/* Features Grid */}
         <AnimateOnScroll animation="glitchIn" delay={600}>
           <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "fas fa-users",
-                title: "Community",
-                description:
-                  "Join a passionate community of IT students and professionals",
-                color: "from-blue-500 to-cyan-500",
-                delay: 0,
-              },
-              {
-                icon: "fas fa-graduation-cap",
-                title: "Learning",
-                description: "Access courses and workshops throughout the year",
-                color: "from-green-500 to-emerald-500",
-                delay: 100,
-              },
-              {
-                icon: "fas fa-trophy",
-                title: "Competitions",
-                description:
-                  "Participate in exciting IT competitions and challenges",
-                color: "from-purple-500 to-violet-500",
-                delay: 200,
-              },
-            ].map((feature, index) => (
+            {homeData.features.map((feature, index) => (
               <AnimateOnScroll
                 key={index}
                 animation="scaleIn"

@@ -1,8 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import Layout from "../components/Layout";
 import { AnimateOnScroll } from "../utilities/animations.jsx";
-
-// Event images - now using public folder paths
+import { eventsData } from "../data/EventsData.js";
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -13,63 +12,8 @@ const Events = () => {
   const autoScrollIntervalRef = useRef(null);
   const galleryContainerRef = useRef(null);
 
-  // Comprehensive gallery with all available images
-  const eventGallery = [
-    { src: "/CITWEBSITE/images/JNJD1.JPG", alt: "JNJD Event 1", category: "JNJD" },
-    { src: "/CITWEBSITE/images/JNJD2.JPG", alt: "JNJD Event 2", category: "JNJD" },
-    { src: "/CITWEBSITE/images/IDEH1.JPG", alt: "IDEH Event 1", category: "IDEH" },
-    { src: "/CITWEBSITE/images/IDEH2.JPG", alt: "IDEH Event 2", category: "IDEH" },
-    { src: "/CITWEBSITE/images/aya.jpg", alt: "Team Member at Event", category: "Team" },
-    { src: "/CITWEBSITE/images/badr.jpg", alt: "Team Member at Event", category: "Team" },
-    {
-      src: "/CITWEBSITE/images/chaara.jpg",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    { src: "/CITWEBSITE/images/doha.png", alt: "Team Member at Event", category: "Team" },
-    {
-      src: "/CITWEBSITE/images/HACHIMI.jpg",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    {
-      src: "/CITWEBSITE/images/hatim.jpeg",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    { src: "/CITWEBSITE/images/IKBI.jpg", alt: "Team Member at Event", category: "Team" },
-    {
-      src: "/CITWEBSITE/images/Imane.jpeg",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    {
-      src: "/CITWEBSITE/images/Jinane.jpg",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    {
-      src: "/CITWEBSITE/images/kribbi.png",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    {
-      src: "/CITWEBSITE/images/loukili.jpg",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    {
-      src: "/CITWEBSITE/images/marjani.jpg",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    {
-      src: "/CITWEBSITE/images/oussie.jpg",
-      alt: "Team Member at Event",
-      category: "Team",
-    },
-    { src: "/CITWEBSITE/images/sara.jpg", alt: "Team Member at Event", category: "Team" },
-  ];
+  // Extract data from eventsData
+  const { mainEvents, eventGallery, getCategoryIcon } = eventsData;
 
   // Optimized gallery navigation with smoother scrolling
   const scrollGallery = useCallback(
@@ -193,86 +137,6 @@ const Events = () => {
       return () => window.removeEventListener("keydown", handleKeyPress);
     }
   }, [selectedImage, navigateImage]);
-
-  const mainEvents = [
-    {
-      id: 1,
-      title: "JNJD",
-      subtitle: "Journée Nationale du Jeune Développeur",
-      englishTitle: "National Day of the Young Developer",
-      since: "2005",
-      description:
-        "The National Day of Young Developers (JNJD) is an annual event that has been celebrated since 2005, dedicated to young individuals with a passion for programming and a knack for tackling complex algorithmic challenges. JNJD serves as a platform to inspire, engage, and recognize the talents of budding developers, fostering a thriving community in the field of information technology.",
-      features: [
-        "Competitive Programming (CP) competitions",
-        "Workshops with cutting-edge technologies",
-        "Conferences from industry experts",
-        "Team collaboration and networking",
-        "Algorithmic problem-solving challenges",
-      ],
-      image: "/CITWEBSITE/images/JNJD3.png",
-      gallery: ["/CITWEBSITE/images/JNJD1.JPG", "/CITWEBSITE/images/JNJD2.JPG", "/CITWEBSITE/images/JNJD3.png"],
-      category: "Competition",
-      color: "from-blue-500 to-cyan-500",
-      status: "Annual Event",
-    },
-    {
-      id: 2,
-      title: "IDEH",
-      subtitle: "International Day of Ethical Hacking",
-      englishTitle: "International Day of Ethical Hacking",
-      since: "2019",
-      description:
-        "The International Days of Ethical Hacking (IDEH) is an annual event that has been taking place since 2019, bringing together individuals with a passion for cybersecurity and ethical hacking. This unique event aims to challenge and showcase the skills of participants while fostering a spirit of healthy competition.",
-      features: [
-        "Capture The Flag (CTF) competitions",
-        "Cybersecurity scenario simulations",
-        "Vulnerability assessment challenges",
-        "Expert-led security workshops",
-        "Penetration testing techniques",
-        "Threat intelligence sessions",
-      ],
-      image: "/CITWEBSITE/images/IDEH.png",
-      gallery: ["/CITWEBSITE/images/IDEH1.JPG", "/CITWEBSITE/images/IDEH2.JPG", "/CITWEBSITE/images/IDEH.png"],
-      category: "Cybersecurity",
-      color: "from-red-500 to-orange-500",
-      status: "Annual Event",
-    },
-    {
-      id: 3,
-      title: "DATA EVENT",
-      subtitle: "Data Science & Analytics Summit",
-      englishTitle: "Coming Soon...",
-      since: "TBA",
-      description:
-        "An upcoming event focused on data science, machine learning, and advanced analytics. Stay tuned for more details about this exciting addition to our event lineup.",
-      features: [
-        "Machine Learning workshops",
-        "Data visualization challenges",
-        "AI research presentations",
-        "Industry expert talks",
-        "Hands-on data projects",
-      ],
-      image: null,
-      gallery: [],
-      category: "Data Science",
-      color: "from-purple-500 to-pink-500",
-      status: "Coming Soon",
-    },
-  ];
-
-  const getCategoryIcon = (category) => {
-    switch (category) {
-      case "Competition":
-        return "fas fa-code";
-      case "Cybersecurity":
-        return "fas fa-shield-alt";
-      case "Data Science":
-        return "fas fa-chart-line";
-      default:
-        return "fas fa-calendar";
-    }
-  };
 
   return (
     <Layout>
