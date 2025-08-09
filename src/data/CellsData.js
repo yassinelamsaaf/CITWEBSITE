@@ -7,7 +7,7 @@ export const cellsData = {
       title: "Web Cell",
       image: "./images/web.png",
       description:
-        "The Web Cell focuses on web development and related technologies. It deals with designing, building, and maintaining websites, web applications, and online services. This domain covers various aspects, including front-end development (user interface and user experience), back-end development (server-side logic and databases), web security, and web performance optimization.",
+        "The Web Cell focuses on web development and related technologies. It deals with designing, building, and maintaining websites, web applications, and online services. This domain covers various aspects, including front-end development (user interface and user experience), back-end development (server-side logic and databases), web security, and web performance optimization. The cell also provides formations (training sessions) throughout the year to help members develop their web development skills.",
       color: "from-blue-500 to-cyan-500",
       technologies: ["React", "Node.js", "JavaScript", "HTML5", "CSS3"],
       chef: "LAMSAAF Yassine",
@@ -26,12 +26,12 @@ export const cellsData = {
       details:
         "Our Web Cell is at the forefront of modern web technologies. We specialize in creating responsive, scalable, and user-friendly web applications. Members work on real-world projects using the latest frameworks and tools, gaining hands-on experience in full-stack development.",
     },
-    // {//ok
+    // {
     //   id: "events",
     //   title: "Events Cell",
     //   image: "./images/events.png",
     //   description:
-    //     "The Events Cell is responsible for planning, organizing, and executing various activities and events. This includes workshops, competitions, seminars, networking sessions, and social gatherings that bring together students, professionals, and industry experts to foster learning and collaboration.",
+    //     "The Events Cell is responsible for planning, organizing, and executing various activities and events. This includes workshops, competitions, seminars, networking sessions, and social gatherings that bring together students, professionals, and industry experts to foster learning and collaboration. The cell also provides formations (training sessions) throughout the year to help members develop their event management and organizational skills.",
     //   color: "from-purple-500 to-pink-500",
     //   technologies: ["Event Management", "Marketing", "Communication", "Logistics", "Planning"],
     //   chef: "IDLAFQIH Anas",
@@ -55,7 +55,7 @@ export const cellsData = {
     //   title: "Sponsorship Cell",
     //   image: "./images/sponsorship.png",
     //   description:
-    //     "The Sponsorship Cell focuses on building strategic partnerships and securing sponsorships from companies and organizations. This cell works on establishing relationships with industry partners, negotiating sponsorship deals, and managing corporate collaborations.",
+    //     "The Sponsorship Cell focuses on building strategic partnerships and securing sponsorships from companies and organizations. This cell works on establishing relationships with industry partners, negotiating sponsorship deals, and managing corporate collaborations. The cell also provides formations (training sessions) throughout the year to help members develop their business development and partnership management skills.",
     //   color: "from-green-500 to-emerald-500",
     //   technologies: ["Partnership Management", "Business Development", "Communication", "Networking"],
     //   chef: "IBLIHI Maryam",
@@ -79,7 +79,7 @@ export const cellsData = {
     //   title: "Technical Cell",
     //   image: "./images/technical.png",
     //   description:
-    //     "The Technical Cell oversees all technical aspects of club operations and projects. This includes infrastructure management, technical project supervision, innovation initiatives, and ensuring the quality of technical deliverables across all club activities.",
+    //     "The Technical Cell oversees all technical aspects of club operations and projects. This includes infrastructure management, technical project supervision, innovation initiatives, and ensuring the quality of technical deliverables across all club activities. The cell also provides formations (training sessions) throughout the year to help members develop their technical leadership and project management skills.",
     //   color: "from-blue-500 to-cyan-500",
     //   technologies: ["System Architecture", "Project Management", "Innovation", "Quality Assurance"],
     //   chef: "NAIT KHOUYA Mohamed Najib",
@@ -103,7 +103,7 @@ export const cellsData = {
     //   title: "Media Cell",
     //   image: "./images/media.png",
     //   description:
-    //     "The Media Cell manages the club's digital presence and communication strategies. This includes content creation, social media management, photography, videography, and maintaining the club's brand image across all digital platforms.",
+    //     "The Media Cell manages the club's digital presence and communication strategies. This includes content creation, social media management, photography, videography, and maintaining the club's brand image across all digital platforms. The cell also provides formations (training sessions) throughout the year to help members develop their digital marketing and content creation skills.",
     //   color: "from-orange-500 to-red-500",
     //   technologies: ["Content Creation", "Social Media", "Photography", "Video Editing", "Branding"],
     //   chef: "BARA Mouad",
@@ -121,13 +121,13 @@ export const cellsData = {
     //   ],
     //   details:
     //     "Our Media Cell amplifies the club's voice across digital platforms. We create engaging content, manage social media presence, and ensure consistent brand communication that resonates with our community.",
-    // },//here
+    // },
     {
       id: "data",
       title: "Data Cell",
       image: "./images/data.png",
       description:
-        "The Data Cell is centered around data management and analysis. It involves collecting, storing, processing, and analyzing data to extract valuable insights and support decision-making processes. Data engineering, data science, data visualization, and database management are key components of this domain.",
+        "The Data Cell is centered around data management and analysis. It involves collecting, storing, processing, and analyzing data to extract valuable insights and support decision-making processes. Data engineering, data science, data visualization, and database management are key components of this domain. The cell also provides formations (training sessions) throughout the year to help members develop their data science and analytics skills.",
       color: "from-green-500 to-emerald-500",
       technologies: ["Python", "R", "SQL", "Tableau", "Machine Learning"],
       chef: "AIT ABDELOUAHAB Mehdi",
@@ -151,7 +151,7 @@ export const cellsData = {
       title: "DevOps Cell",
       image: "./images/DevOps.png",
       description:
-        "DevOps stands for Development and Operations. The DevOps Cell aims to bridge the gap between software development and IT operations. It focuses on automating and streamlining the software development lifecycle, from code writing to deployment and maintenance. DevOps practices emphasize collaboration, continuous integration and continuous delivery (CI/CD), infrastructure management, and monitoring.",
+        "DevOps stands for Development and Operations. The DevOps Cell aims to bridge the gap between software development and IT operations. It focuses on automating and streamlining the software development lifecycle, from code writing to deployment and maintenance. DevOps practices emphasize collaboration, continuous integration and continuous delivery (CI/CD), infrastructure management, and monitoring. The cell also provides formations (training sessions) throughout the year to help members develop their DevOps and infrastructure management skills.",
       color: "from-orange-500 to-red-500",
       technologies: ["Docker", "Kubernetes", "Jenkins", "AWS", "Terraform"],
       chef: "EL MOUDEN Abdelghafor",
@@ -175,7 +175,7 @@ export const cellsData = {
       title: "Design Cell",
       image: "./images/design.png",
       description:
-        "The Design Cell revolves around various aspects of visual and user experience design. It involves creating aesthetically pleasing and functional designs for products, services, or interfaces. This domain includes graphic design, user interface (UI) design, user experience (UX) design, interaction design, and prototyping.",
+        "The Design Cell revolves around various aspects of visual and user experience design. It involves creating aesthetically pleasing and functional designs for products, services, or interfaces. This domain includes graphic design, user interface (UI) design, user experience (UX) design, interaction design, and prototyping. The cell also provides formations (training sessions) throughout the year to help members develop their design and creative skills.",
       color: "from-pink-500 to-purple-500",
       technologies: [
         "Figma",
@@ -205,7 +205,7 @@ export const cellsData = {
       title: "Security Cell",
       image: "./images/sec.png",
       description:
-        "The Security Cell is dedicated to safeguarding systems, networks, and data from potential threats and unauthorized access. It deals with information security, network security, application security, and cloud security. Professionals in this domain work on implementing security measures, conducting vulnerability assessments, and responding to security incidents.",
+        "The Security Cell is dedicated to safeguarding systems, networks, and data from potential threats and unauthorized access. It deals with information security, network security, application security, and cloud security. Professionals in this domain work on implementing security measures, conducting vulnerability assessments, and responding to security incidents. The cell also provides formations (training sessions) throughout the year to help members develop their cybersecurity and ethical hacking skills.",
       color: "from-red-500 to-orange-600",
       technologies: [
         "Penetration Testing",
@@ -235,7 +235,7 @@ export const cellsData = {
       title: "Algorithmic Cell",
       image: "./images/algor.png",
       description:
-        "The Algorithmic Cell focuses on algorithms and computational problem-solving. It deals with designing and analyzing algorithms to solve complex computational problems efficiently. This domain is closely related to computer science and is crucial for various applications, including artificial intelligence, machine learning, optimization, and data analysis.",
+        "The Algorithmic Cell focuses on algorithms and computational problem-solving. It deals with designing and analyzing algorithms to solve complex computational problems efficiently. This domain is closely related to computer science and is crucial for various applications, including artificial intelligence, machine learning, optimization, and data analysis. The cell also provides formations (training sessions) throughout the year to help members develop their algorithmic thinking and competitive programming skills.",
       color: "from-violet-500 to-purple-600",
       technologies: [
         "C++",
