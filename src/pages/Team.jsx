@@ -33,7 +33,7 @@ const Team = () => {
         {/* Avatar - Same size for all */}
         <div className="relative mb-4">
           <div
-            className={`w-24 h-24 mx-auto bg-gradient-to-br ${cellColor} rounded-lg overflow-hidden border-2 ${
+            className={`w-32 h-32 mx-auto bg-gradient-to-br ${cellColor} rounded-lg overflow-hidden border-2 ${
               isChief ? "border-green-400" : "border-blue-400/50"
             } group-hover:scale-110 transition-transform duration-300`}
           >
@@ -60,7 +60,7 @@ const Team = () => {
 
         {/* Info */}
         <div className="text-center">
-          <h4 className="text-sm font-bold terminal-text mb-1 group-hover:text-green-400 transition-colors">
+          <h4 className="text-sm font-bold terminal-text mb-1 group-hover:text-green-400 transition-colors whitespace-pre-line">
             {member.name}
           </h4>
           <p className="text-xs text-gray-400 group-hover:text-blue-300 transition-colors">
@@ -128,7 +128,7 @@ const Team = () => {
                 </div>
 
                 <div className="flex items-center space-x-6">
-                  <div className="w-32 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg overflow-hidden border-4 border-green-400">
+                  <div className="w-40 h-40 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg overflow-hidden border-4 border-green-400">
                     <img
                       src={teamStructure.president.image}
                       alt={teamStructure.president.name}
@@ -171,7 +171,7 @@ const Team = () => {
                   className="cyber-card p-6 border-2 border-blue-400/50 hover:border-blue-400 transition-all duration-300 group"
                 >
                   <div className="text-center">
-                    <div className="w-28 h-28 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg overflow-hidden border-2 border-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-36 h-36 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg overflow-hidden border-2 border-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
                       <img
                         src={exec.image}
                         alt={exec.name}
@@ -184,7 +184,7 @@ const Team = () => {
                         }}
                       />
                     </div>
-                    <h3 className="text-lg font-bold terminal-text mb-1 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-lg font-bold terminal-text mb-1 group-hover:text-blue-400 transition-colors whitespace-pre-line">
                       {exec.name}
                     </h3>
                     <p className="text-blue-300 font-mono text-sm mb-2">
@@ -319,7 +319,7 @@ const Team = () => {
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="glass-dark border border-green-400/50 rounded-lg max-w-md w-full p-6">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold terminal-text text-green-400">
+                <h3 className="text-2xl font-bold terminal-text text-green-400 whitespace-pre-line">
                   {selectedMember.name}
                 </h3>
                 <button
@@ -331,7 +331,7 @@ const Team = () => {
               </div>
 
               <div className="text-center">
-                <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg overflow-hidden border-2 border-green-400 mb-4">
+                <div className="w-40 h-40 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg overflow-hidden border-2 border-green-400 mb-4">
                   {selectedMember.image ? (
                     <img
                       src={selectedMember.image}

@@ -2,9 +2,9 @@
 export const teamData = {
   // President (top leadership)
   president: {
-    name: "ZRALLA Jinane",
+    name: "AAMOUM\nIlyass",
     role: "Club's Chairman",
-    image: "./images/Jinane.jpg",
+    image: "./images/team/Ilyass.png",
     description: "Leading the club with vision and strategic planning",
     level: "executive",
   },
@@ -12,132 +12,132 @@ export const teamData = {
   // Executive Board
   executives: [
     {
-      name: "OUCHEN Imane",
+      name: "SIHAMI\nImane",
       role: "Vice Chairman",
-      image: "./images/Imane.jpeg",
+      image: "./images/team/Imane.png",
       description: "Supporting leadership and member coordination",
       level: "executive",
     },
     {
-      name: "LAANAYA Mohamed Amine",
+      name: "ID AISSA\nFarid",
       role: "Treasurer",
-      image: "./images/Image.jpg",
+      image: "./images/team/Farid.png",
       description: "Managing financial operations and budget planning",
       level: "executive",
     },
     {
-      name: "ANOU Oussama",
+      name: "LACHGUER\nMouad",
       role: "General Secretary",
-      image: "./images/oussie.jpg",
+      image: "./images/team/Mouad.png",
       description: "Administrative operations and documentation",
       level: "executive",
     },
   ],
 
-  // Specialized Cells with Chiefs and Members
-  cells: {
+// Specialized Cells with Chiefs and Members
+cells: {
     events: {
-      chief: {
-        name: "MOUKIL Aya",
-        role: "Events Cell Chief",
-        image: "./images/aya.jpg",
-        description:
-          "Organizing workshops, competitions, and networking events",
-      },
-      members: [
-        { name: "Member 1", role: "Events Coordinator", image: null },
-        { name: "Member 2", role: "Events Coordinator", image: null },
-      ],
+        chief: {
+            name: "IDLAFQIH\nAnas",
+            role: "Events Cell Chief",
+            image: "./images/team/Anas.png",
+            description:
+                "Organizing workshops, competitions, and networking events",
+        },
+        members: [
+            { name: "HAROUAL\nHafsa", role: "Co-chief", image: "./images/team/Hafsa.png" },
+            { name: "FARAJ\nDiaeeddine", role: "Co-chief", image: "./images/team/Diaeeddine.png" },
+        ],
     },
     sponsorship: {
-      chief: {
-        name: "EL MAZOUNI Doha",
-        role: "Sponsorship Cell Chief",
-        image: "./images/doha.png",
-        description: "Building partnerships and sponsorship relationships",
-      },
-      members: [
-        { name: "Member 1", role: "Partnership Coordinator", image: null },
-        { name: "Member 2", role: "Partnership Coordinator", image: null },
-      ],
+        chief: {
+            name: "IBLIHI\nMaryam",
+            role: "Sponsorship Cell Chief",
+            image: "./images/team/Maryam.png",
+            description: "Building partnerships and sponsorship relationships",
+        },
+        members: [
+            { name: "GHAYATI\nDouae", role: "Co-chief", image: "./images/team/Douae.png" },
+            { name: "AIT JDID\nNissrine", role: "Co-chief", image: "./images/team/Nissrine.png" },
+        ],
     },
     technical: {
-      chief: {
-        name: "EL HACHIMI Athmane",
-        role: "Technical Cell Chief",
-        image: "./images/HACHIMI.jpg",
-        description: "Overseeing technical projects and innovations",
-      },
-      members: [
-        { name: "Member 1", role: "Technical Developer", image: null },
-      ],
+        chief: {
+            name: "NAIT KHOUYA\nMohamed Najib",
+            role: "Technical Cell Chief",
+            image: "./images/team/Najib.png",
+            description: "Overseeing technical projects and innovations",
+        },
+        members: [
+            { name: "CHAKRONE\nAnas", role: "Co-chief", image: "./images/team/Chakrone.png" },
+        ],
     },
     media: {
-      chief: {
-        name: "KRIBBI Fatima Zahrae",
-        role: "Media Cell Chief",
-        image: "./images/kribbi.png",
-        description: "Managing digital presence and communications",
-      },
-      members: [{ name: "Member 1", role: "Content Creator", image: null }],
+        chief: {
+            name: "BARA\nMouad",
+            role: "Media Cell Chief",
+            image: "./images/team/Bara.png",
+            description: "Managing digital presence and communications",
+        },
+        members: [{ name: "ELHAIMAR\nMorad", role: "Co-chief", image: "./images/team/Morad.png" }],
     },
     web: {
-      chief: {
-        name: "SLIMANI Hatim",
-        role: "Web Cell Chief",
-        image: "./images/hatim.jpeg",
-        description: "Web development and digital infrastructure",
-      },
-      members: [{ name: "Member 1", role: "Co-Chief", image: null }],
+        chief: {
+            name: "LAMSAAF\nYassine",
+            role: "Web Cell Chief",
+            image: "./images/team/Yassine.png",
+            description: "Web development and digital infrastructure",
+        },
+        members: [{ name: "RAGUIG\nMohammed Amine", role: "Co-Chief", image: "./images/team/Amine.png" }],
     },
     algo: {
-      chief: {
-        name: "Member Chief",
-        role: "Algorithm Cell Chief",
-        image: null,
-        description: "Competitive programming and algorithmic challenges",
-      },
-      members: [
-        { name: "Member 1", role: "Algorithm Specialist", image: null },
-      ],
+        chief: {
+            name: "SERJI\nAsmae",
+            role: "Algorithm Cell Chief",
+            image: "./images/team/Asmae.png",
+            description: "Competitive programming and algorithmic challenges",
+        },
+        members: [
+            { name: "FAJOUI\nAnass", role: "Co-Chief", image: "./images/team/Fajoui.png" },
+        ],
     },
     security: {
-      chief: {
-        name: "AZEHAF Sara",
-        role: "Security Cell Chief",
-        image: "./images/sara.jpg",
-        description: "Cybersecurity and ethical hacking initiatives",
-      },
-      members: [{ name: "Member 1", role: "Security Analyst", image: null }],
+        chief: {
+            name: "ANADDAM\nMohamed",
+            role: "Security Cell Chief",
+            image: "./images/team/Anaddam.png",
+            description: "Cybersecurity and ethical hacking initiatives",
+        },
+        members: [{ name: "AKALLAL\nMohamed Issam", role: "Co-Chief", image: "./images/team/Issam.png" }],
     },
     data: {
-      chief: {
-        name: "LAKHAL Badr",
-        role: "Data Cell Chief",
-        image: "./images/badr.jpg",
-        description: "Data science and machine learning projects",
-      },
-      members: [{ name: "Member 1", role: "Data Scientist", image: null }],
+        chief: {
+            name: "AIT ABDELOUAHAB\nMehdi",
+            role: "Data Cell Chief",
+            image: "./images/team/Mehdi.png",
+            description: "Data science and machine learning projects",
+        },
+        members: [{ name: "CHAHIRI\nAbderrahmane", role: "Co-Chief", image: "./images/team/Abderrahmane.png" }],
     },
     devops: {
-      chief: {
-        name: "IKBI Abdelillah",
-        role: "DevOps Cell Chief",
-        image: "./images/IKBI.jpg",
-        description: "Infrastructure and deployment automation",
-      },
-      members: [{ name: "Member 1", role: "DevOps Engineer", image: null }],
+        chief: {
+            name: "EL MOUDEN\nAbdelghafor",
+            role: "DevOps Cell Chief",
+            image: "./images/team/Abdelghafor.png",
+            description: "Infrastructure and deployment automation",
+        },
+        members: [{ name: "AHORRAR\nOmar", role: "Co-Chief", image: "./images/team/Omar.png" }],
     },
     design: {
-      chief: {
-        name: "EL OUKILI Tarik",
-        role: "Design Cell Chief",
-        image: "./images/loukili.jpg",
-        description: "UI/UX design and visual identity",
-      },
-      members: [],
+        chief: {
+            name: "ZIZAH\nTaha",
+            role: "Design Cell Chief",
+            image: "./images/team/Taha.png",
+            description: "UI/UX design and visual identity",
+        },
+        members: [],
     },
-  },
+},
 
   // Cell color themes for visual consistency
   getCellColor: (cellName) => {

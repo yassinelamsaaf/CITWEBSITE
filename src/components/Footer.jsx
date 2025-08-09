@@ -7,13 +7,7 @@ const Footer = () => {
       color: "hover:text-blue-400 hover:shadow-blue-400/50"
     },
     {
-      href: "https://github.com/CIT-INPT",
-      icon: "fab fa-github",
-      title: "GitHub",
-      color: "hover:text-green-400 hover:shadow-green-400/50"
-    },
-    {
-      href: "https://linkedin.com/in/68543778",
+      href: "https://www.linkedin.com/company/cit-inpt/",
       icon: "fab fa-linkedin",
       title: "LinkedIn",
       color: "hover:text-blue-300 hover:shadow-blue-300/50"
