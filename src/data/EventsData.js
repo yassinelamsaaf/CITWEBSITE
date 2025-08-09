@@ -60,7 +60,7 @@ export const eventsData = {
         "Industry expert talks",
         "Hands-on data projects",
       ],
-      image: null,
+      image: "./images/t2d.jpg",
       gallery: [],
       category: "Data Science",
       color: "from-purple-500 to-pink-500",

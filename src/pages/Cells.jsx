@@ -231,32 +231,33 @@ const Cells = () => {
                     </p>
                   </div>
 
-                  {/* Cell Chef */}
+                  {/* Cell Heads */}
                   <div>
                     <h3 className="text-2xl font-bold text-green-400 mb-4 font-mono">
-                      {">"} Cell Chef
+                      {">"} Cell Heads
                     </h3>
-                    <div className="glass-dark p-4 border border-green-400/30">
-                      <p className="text-white text-xl font-semibold">
-                        {selectedCell.chef}
-                      </p>
-                      <p className="text-gray-400 text-sm">
-                        Leading expert and mentor for the {selectedCell.title}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Members */}
-                  <div>
-                    <h3 className="text-2xl font-bold text-green-400 mb-4 font-mono">
-                      {">"} Active Members
-                    </h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {/* Chief */}
+                      <div className="glass-dark p-4 border border-green-400/50 text-center">
+                        <div className="mb-2">
+                          <span className="inline-block w-3 h-3 bg-yellow-400 rounded-full mr-2"></span>
+                          <span className="text-yellow-400 text-xs font-mono">CHIEF</span>
+                        </div>
+                        <p className="text-white font-semibold text-sm">
+                          {selectedCell.chef}
+                        </p>
+                      </div>
+                      
+                      {/* Co-Chiefs/Members */}
                       {selectedCell.members.map((member, index) => (
                         <div
                           key={index}
-                          className="glass-dark p-3 border border-green-400/30 text-center"
+                          className="glass-dark p-4 border border-green-400/30 text-center"
                         >
+                          <div className="mb-2">
+                            <span className="inline-block w-3 h-3 bg-green-400 rounded-full mr-2"></span>
+                            <span className="text-green-400 text-xs font-mono">CO-CHIEF</span>
+                          </div>
                           <p className="text-white font-semibold text-sm">
                             {member}
                           </p>
@@ -271,14 +272,22 @@ const Cells = () => {
                       {">"} Current Projects
                     </h3>
                     <div className="space-y-3">
-                      {selectedCell.projects.map((project, index) => (
-                        <div
-                          key={index}
-                          className="glass-dark p-4 border border-green-400/30 border-l-4"
-                        >
-                          <p className="text-white font-semibold">{project}</p>
+                      {selectedCell.id === "web" ? (
+                        <div className="glass-dark p-4 border border-green-400/30 border-l-4">
+                          <a
+                            href="https://yassinelamsaaf.github.io/CITWEBSITE/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white font-semibold hover:text-green-400 transition-colors cursor-pointer"
+                          >
+                            CIT Platform
+                          </a>
                         </div>
-                      ))}
+                      ) : (
+                        <div className="glass-dark p-4 border border-green-400/30 border-l-4">
+                          <p className="text-gray-400 font-semibold italic">Coming soon</p>
+                        </div>
+                      )}
                     </div>
                   </div>
 
