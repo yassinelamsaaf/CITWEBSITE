@@ -108,7 +108,7 @@ const Cells = () => {
                       {cell.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className={`px-3 py-1 text-xs font-mono border border-green-400/30 text-green-300 bg-gradient-to-r ${cell.color} bg-opacity-20 hover:border-green-400 hover:bg-opacity-30 transition-all duration-300`}
+                          className={`px-3 py-1 text-xs font-mono border border-green-400/30 text-white bg-gradient-to-r ${cell.color} bg-opacity-20 hover:border-green-400 hover:bg-opacity-30 transition-all duration-300`}
                         >
                           {tech}
                         </span>
@@ -129,7 +129,7 @@ const Cells = () => {
                       className={`cyber-button-small py-2 px-6 font-mono text-sm bg-gradient-to-r ${cell.color} bg-opacity-20 border border-green-400/30 hover:border-green-400 hover:bg-opacity-30 transition-all duration-300 group-hover:scale-105`}
                       onClick={() => setSelectedCell(cell)}
                     >
-                      <span className="terminal-prompt text-xs">
+                      <span className="terminal-prompt text-xs text-white">
                         Learn More
                       </span>
                     </button>
@@ -272,17 +272,26 @@ const Cells = () => {
                       {">"} Current Projects
                     </h3>
                     <div className="space-y-3">
-                      {selectedCell.id === "web" ? (
-                        <div className="glass-dark p-4 border border-green-400/30 border-l-4">
-                          <a
-                            href="https://yassinelamsaaf.github.io/CITWEBSITE/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-white font-semibold hover:text-green-400 transition-colors cursor-pointer"
+                      {selectedCell.projects && selectedCell.projects.length > 0 ? (
+                        selectedCell.projects.map((project, index) => (
+                          <div
+                            key={index}
+                            className="glass-dark p-4 border border-green-400/30 border-l-4"
                           >
-                            CIT Platform
-                          </a>
-                        </div>
+                            {selectedCell.id === "web" && project === "CIT Platform" ? (
+                              <a
+                                href="https://yassinelamsaaf.github.io/CITWEBSITE/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white font-semibold hover:text-green-400 transition-colors cursor-pointer"
+                              >
+                                {project}
+                              </a>
+                            ) : (
+                              <p className="text-white font-semibold">{project}</p>
+                            )}
+                          </div>
+                        ))
                       ) : (
                         <div className="glass-dark p-4 border border-green-400/30 border-l-4">
                           <p className="text-gray-400 font-semibold italic">Coming soon</p>
@@ -300,7 +309,7 @@ const Cells = () => {
                       {selectedCell.skills.map((skill, index) => (
                         <span
                           key={index}
-                          className={`px-4 py-2 border border-green-400/50 text-green-300 bg-gradient-to-r ${selectedCell.color} bg-opacity-20 font-mono text-sm`}
+                          className={`px-4 py-2 border border-green-400/50 text-white bg-gradient-to-r ${selectedCell.color} bg-opacity-20 font-mono text-sm`}
                         >
                           {skill}
                         </span>
@@ -317,7 +326,7 @@ const Cells = () => {
                       {selectedCell.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className={`px-4 py-2 border border-green-400/30 text-green-400 bg-gradient-to-r ${selectedCell.color} bg-opacity-10 font-mono text-sm hover:border-green-400 transition-colors`}
+                          className={`px-4 py-2 border border-green-400/30 text-white bg-gradient-to-r ${selectedCell.color} bg-opacity-10 font-mono text-sm hover:border-green-400 transition-colors`}
                         >
                           {tech}
                         </span>

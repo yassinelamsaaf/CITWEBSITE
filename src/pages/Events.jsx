@@ -332,7 +332,7 @@ const Events = () => {
                 </div>
                 <h2 className="text-4xl font-bold terminal-text glow-text">
                   <span className="text-green-400">{">"}</span>
-                  <span className="text-blue-400 ml-2">Event Gallery</span>
+                  <span className="text-green-400 ml-2">Event Gallery</span>
                 </h2>
                 <p className="text-gray-400 text-sm mt-2">
                   Click any image to view larger • Scroll horizontally for more

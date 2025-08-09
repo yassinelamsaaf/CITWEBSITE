@@ -45,8 +45,18 @@ const Home = () => {
               <div className="lg:col-span-7 flex justify-center lg:justify-start">
                 <div className="glass-dark p-10 border-l-4 border-green-400 max-w-full w-full">
                   <div className="font-mono text-left">
-                    <div className="text-green-400 text-lg mb-4 animate-pulse">
-                      <span className="text-2xl">{">"}</span> {homeData.hero.title.initialization}
+                    <div className="flex items-center mb-4">
+                      <div className="text-green-400 text-lg animate-pulse">
+                        <span className="text-2xl">{">"}</span> {homeData.hero.title.initialization}
+                      </div>
+                      <div className="ml-4">
+                        <img
+                          src={homeData.hero.logo.src}
+                          alt={homeData.hero.logo.alt}
+                          className="w-8 h-8 object-contain opacity-80"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold terminal-text glow-text mb-6 leading-tight">
                       {homeData.hero.title.main}

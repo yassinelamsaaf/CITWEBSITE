@@ -13,7 +13,7 @@ export const cellsData = {
       chef: "LAMSAAF Yassine",
       members: ["RAGUIG Mohammed Amine"],
       projects: [
-        "E-commerce Platform",
+        "CIT Platform",
         "University Management System",
         "Real-time Chat Application",
       ],
