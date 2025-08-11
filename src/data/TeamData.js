@@ -105,7 +105,7 @@ cells: {
         chief: {
             name: "AKALLAL\nMohamed Issam",
             role: "Security Cell Chief",
-            image: "./images/team/Anaddam.png",
+            image: "./images/team/Issam.png",
             description: "Cybersecurity and ethical hacking initiatives",
         },
         members: [{ name: "ANADDAM\nMohamed", role: "Co-Chief", image: "./images/team/Anaddam.png" }],
