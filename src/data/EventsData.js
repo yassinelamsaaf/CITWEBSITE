@@ -48,17 +48,17 @@ export const eventsData = {
     {
       id: 3,
       title: "T2D",
-      subtitle: "Tech to Data Summit",
-      englishTitle: "Coming Soon...",
+      subtitle: "Think to Deploy",
+      englishTitle: "Think to Deploy",
       since: "TBA",
       description:
-        "An upcoming event focused on data science, machine learning, and advanced analytics. Stay tuned for more details about this exciting addition to our event lineup.",
+        "Think to Deploy (T2D) is an innovative competition centered on creating and deploying real-world solutions in Data Science and Artificial Intelligence. Unlike traditional hackathons, T2D challenges participants to develop technically viable projects that are ready to be integrated into a partner company’s environment, with a clear objective: turning concepts into tangible, deployable solutions.",
       features: [
-        "Machine Learning workshops",
-        "Data visualization challenges",
-        "AI research presentations",
-        "Industry expert talks",
-        "Hands-on data projects",
+        "Real-world AI and Data challenge from a partner company",
+        "Proof of Concept (POC) development",
+        "On-site adaptation to company tools and data",
+        "Final pitch to AI/Data expert jury",
+        "Internship for the winning team",
       ],
       image: "./images/t2d.jpg",
       gallery: [],
@@ -70,10 +70,10 @@ export const eventsData = {
 
   // Event gallery - only event-specific images (no team member images)
   eventGallery: [
-    { src: "./images/JNJD1.JPG", alt: "JNJD Event 1", category: "JNJD" },
-    { src: "./images/JNJD2.JPG", alt: "JNJD Event 2", category: "JNJD" },
-    { src: "./images/IDEH1.JPG", alt: "IDEH Event 1", category: "IDEH" },
-    { src: "./images/IDEH2.JPG", alt: "IDEH Event 2", category: "IDEH" },
+    { src: "./images/jnjd.jpg", alt: "JNJD Event 1", category: "JNJD" },
+    { src: "./images/jnjd3.jpg", alt: "JNJD Event 2", category: "JNJD" },
+    { src: "./images/IDEH.JPG",  alt: "IDEH Event 1", category: "IDEH" },
+    { src: "./images/ideh3.jpg", alt: "IDEH Event 2", category: "IDEH" },
   ],
 
   // Category icons mapping
