@@ -84,9 +84,9 @@ Morad`,role:"Co-chief",image:"./images/team/Morad.png"}]},web:{chief:{name:`LAMS
 Yassine`,role:"Web Cell Chief",image:"./images/team/Yassine.png",description:"Web development and digital infrastructure"},members:[{name:`RAGUIG
 Mohammed Amine`,role:"Co-Chief",image:"./images/team/Amine.png"}]},algo:{chief:{name:`SERJI
 Asmae`,role:"Algorithm Cell Chief",image:"./images/team/Asmae.png",description:"Competitive programming and algorithmic challenges"},members:[{name:`FAJOUI
-Anass`,role:"Co-Chief",image:"./images/team/Fajoui.png"}]},security:{chief:{name:`ANADDAM
-Mohamed`,role:"Security Cell Chief",image:"./images/team/Anaddam.png",description:"Cybersecurity and ethical hacking initiatives"},members:[{name:`AKALLAL
-Mohamed Issam`,role:"Co-Chief",image:"./images/team/Issam.png"}]},data:{chief:{name:`AIT ABDELOUAHAB
+Anass`,role:"Co-Chief",image:"./images/team/Fajoui.png"}]},security:{chief:{name:`AKALLAL
+Mohamed Issam`,role:"Security Cell Chief",image:"./images/team/Anaddam.png",description:"Cybersecurity and ethical hacking initiatives"},members:[{name:`ANADDAM
+Mohamed`,role:"Co-Chief",image:"./images/team/Anaddam.png"}]},data:{chief:{name:`AIT ABDELOUAHAB
 Mehdi`,role:"Data Cell Chief",image:"./images/team/Mehdi.png",description:"Data science and machine learning projects"},members:[{name:`CHAHIRI
 Abderrahmane`,role:"Co-Chief",image:"./images/team/Abderrahmane.png"}]},devops:{chief:{name:`EL MOUDEN
 Abdelghafor`,role:"DevOps Cell Chief",image:"./images/team/Abdelghafor.png",description:"Infrastructure and deployment automation"},members:[{name:`AHORRAR
