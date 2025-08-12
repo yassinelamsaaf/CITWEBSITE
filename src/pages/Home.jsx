@@ -31,11 +31,11 @@ const Home = () => {
                         />
                       </div>
 
-                      {/* Animated corner accents */}
-                      <div className="absolute -top-3 -left-3 w-8 h-8 bg-green-400 transform rotate-45 animate-pulse"></div>
-                      <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-400 transform rotate-45 animate-pulse delay-200"></div>
-                      <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-purple-400 transform rotate-45 animate-pulse delay-400"></div>
-                      <div className="absolute -bottom-3 -right-3 w-8 h-8 bg-cyan-400 transform rotate-45 animate-pulse delay-600"></div>
+                      {/* Animated corner triangles aligned with hexagon edges */}
+                      <div className="absolute top-2 left-2 w-0 h-0 border-r-[14px] border-r-transparent border-t-[14px] border-t-green-400 animate-pulse"></div>
+                      <div className="absolute top-2 right-2 w-0 h-0 border-l-[14px] border-l-transparent border-t-[14px] border-t-blue-400 animate-pulse delay-200"></div>
+                      <div className="absolute bottom-2 left-2 w-0 h-0 border-r-[14px] border-r-transparent border-b-[14px] border-b-purple-400 animate-pulse delay-400"></div>
+                      <div className="absolute bottom-2 right-2 w-0 h-0 border-l-[14px] border-l-transparent border-b-[14px] border-b-cyan-400 animate-pulse delay-600"></div>
                     </div>
                   </div>
                 </div>
