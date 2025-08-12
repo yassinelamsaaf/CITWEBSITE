@@ -80,6 +80,38 @@ const useImagePreloader = () => {
 
     let loadedCount = 0;
     const totalImages = imageUrls.length;
+    let hasReached50 = false;
+
+    const updateProgress = (count) => {
+      const actualProgress = (count / totalImages) * 100;
+      
+      // If we reach 50% and haven't accelerated yet, speed up to 100%
+      if (actualProgress >= 50 && !hasReached50) {
+        hasReached50 = true;
+        
+        // Quickly animate from 50% to 100%
+        let currentProgress = 50;
+        const acceleratedInterval = setInterval(() => {
+          currentProgress += 10; // Jump by 10% each time
+          setLoadingProgress(Math.min(currentProgress, 100));
+          
+          if (currentProgress >= 100) {
+            clearInterval(acceleratedInterval);
+            // Finish loading shortly after reaching 100%
+            setTimeout(() => {
+              setImagesLoaded(true);
+            }, 200);
+          }
+        }, 50); // Very fast intervals for quick completion
+        
+        return;
+      }
+      
+      // Normal progress update for the first 50%
+      if (!hasReached50) {
+        setLoadingProgress(actualProgress);
+      }
+    };
 
     const imagePromises = imageUrls.map((url) => {
       return new Promise((resolve, reject) => {
@@ -87,13 +119,13 @@ const useImagePreloader = () => {
         
         img.onload = () => {
           loadedCount++;
-          setLoadingProgress((loadedCount / totalImages) * 100);
+          updateProgress(loadedCount);
           resolve(url);
         };
         
         img.onerror = () => {
           loadedCount++;
-          setLoadingProgress((loadedCount / totalImages) * 100);
+          updateProgress(loadedCount);
           resolve(url); // Resolve anyway to not block loading
         };
         
@@ -101,11 +133,14 @@ const useImagePreloader = () => {
       });
     });
 
+    // Don't wait for all images after 50% is reached
     Promise.all(imagePromises).then(() => {
-      // Add a small delay to ensure smooth transition
-      setTimeout(() => {
-        setImagesLoaded(true);
-      }, 300);
+      // Only finish normally if we haven't already accelerated
+      if (!hasReached50) {
+        setTimeout(() => {
+          setImagesLoaded(true);
+        }, 300);
+      }
     });
 
   }, []);

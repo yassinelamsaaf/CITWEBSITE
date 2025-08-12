@@ -15,7 +15,7 @@ const Events = () => {
   // Extract data from eventsData
   const { mainEvents, eventGallery, getCategoryIcon } = eventsData;
 
-  // Optimized gallery navigation with smoother scrolling
+  // Optimized gallery navigation with infinite scrolling
   const scrollGallery = useCallback(
     (direction, isManual = false) => {
       const container = galleryContainerRef.current;
@@ -35,18 +35,39 @@ const Events = () => {
         }, 5000);
       }
 
-      const scrollAmount = 280; // Slightly reduced for smoother scrolling
-      const targetScroll = direction === "left" ? -scrollAmount : scrollAmount;
+      const scrollAmount = 320; // Increased for faster manual scrolling
+      const itemWidth = 280;
+      const totalItems = eventGallery.length;
+      const duplicatePoint = itemWidth * totalItems;
 
-      container.scrollBy({
-        left: targetScroll,
-        behavior: "smooth",
-      });
+      if (direction === "left") {
+        // Scrolling left
+        if (container.scrollLeft <= 0) {
+          // If at the beginning, jump to the end of the first set
+          container.scrollLeft = duplicatePoint - scrollAmount;
+        } else {
+          container.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth",
+          });
+        }
+      } else {
+        // Scrolling right
+        if (container.scrollLeft >= duplicatePoint) {
+          // If past the original set, reset to beginning
+          container.scrollLeft = scrollAmount;
+        } else {
+          container.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth",
+          });
+        }
+      }
     },
-    [isAutoScrolling]
+    [isAutoScrolling, eventGallery.length]
   );
 
-  // Auto-scroll functionality with constant smooth scrolling
+  // Auto-scroll functionality with infinite smooth scrolling
   useEffect(() => {
     if (!isAutoScrolling) return;
 
@@ -55,17 +76,20 @@ const Events = () => {
         const container = galleryContainerRef.current;
         if (!container) return;
 
-        const scrollStep = 1; // Small step for smooth constant scrolling
-        const maxScrollLeft = container.scrollWidth - container.clientWidth;
+        const scrollStep = 2; // Increased step for faster scrolling
+        const itemWidth = 280; // Width of each gallery item (264px + 16px gap)
+        const totalItems = eventGallery.length;
+        const duplicatePoint = itemWidth * totalItems;
 
-        if (container.scrollLeft >= maxScrollLeft - 5) {
-          // Smoothly scroll back to start when we reach the end
-          container.scrollTo({ left: 0, behavior: "smooth" });
+        // Check if we've scrolled past the original items
+        if (container.scrollLeft >= duplicatePoint) {
+          // Reset to beginning without animation for seamless loop
+          container.scrollLeft = 0;
         } else {
           // Constant smooth scrolling
           container.scrollLeft += scrollStep;
         }
-      }, 50); // Much faster interval for smooth constant movement
+      }, 30); // Faster interval for smoother movement
     };
 
     const timer = setTimeout(startAutoScroll, 1000); // Start after 1 second
@@ -77,7 +101,7 @@ const Events = () => {
         autoScrollIntervalRef.current = null;
       }
     };
-  }, [isAutoScrolling]);
+  }, [isAutoScrolling, eventGallery.length]);
 
   // Pause auto-scroll on hover
   const handleMouseEnter = useCallback(() => {
@@ -99,16 +123,35 @@ const Events = () => {
 
   const navigateImage = useCallback(
     (direction) => {
+      if (!selectedImage) return;
+      
+      // Check if we're viewing from event gallery or main gallery
+      const currentGallery = selectedImage.gallery || eventGallery;
+      const currentIndex = selectedImage.currentIndex !== undefined 
+        ? selectedImage.currentIndex 
+        : currentGalleryIndex;
+      
       const newIndex =
         direction === "prev"
-          ? (currentGalleryIndex - 1 + eventGallery.length) %
-            eventGallery.length
-          : (currentGalleryIndex + 1) % eventGallery.length;
+          ? (currentIndex - 1 + currentGallery.length) % currentGallery.length
+          : (currentIndex + 1) % currentGallery.length;
 
-      setCurrentGalleryIndex(newIndex);
-      setSelectedImage({ ...eventGallery[newIndex], index: newIndex });
+      if (selectedImage.gallery) {
+        // Event gallery navigation
+        setSelectedImage({
+          src: currentGallery[newIndex],
+          alt: `${selectedImage.alt.split(' ').slice(0, -1).join(' ')} ${newIndex + 1}`,
+          category: selectedImage.category,
+          gallery: currentGallery,
+          currentIndex: newIndex
+        });
+      } else {
+        // Main gallery navigation
+        setCurrentGalleryIndex(newIndex);
+        setSelectedImage({ ...eventGallery[newIndex], index: newIndex });
+      }
     },
-    [currentGalleryIndex, eventGallery]
+    [selectedImage, currentGalleryIndex, eventGallery]
   );
 
   // Keyboard navigation for image modal
@@ -142,7 +185,7 @@ const Events = () => {
     <Layout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
         {/* Header Section */}
-        <AnimateOnScroll animation="glitchIn">
+        <AnimateOnScroll animation="glitchIn" delay={0}>
           <div className="text-center mb-16 relative">
             {/* Terminal-style header */}
             <div className="glass-dark p-8 border border-green-400/30 max-w-4xl mx-auto relative overflow-hidden">
@@ -185,7 +228,7 @@ const Events = () => {
             <AnimateOnScroll
               key={event.id}
               animation="fadeInUp"
-              delay={index * 50}
+              delay={index * 100}
             >
               <div
                 className="group relative overflow-hidden cyber-card border border-green-400/30 hover:border-green-400 transition-all duration-300 cursor-pointer will-change-transform"
@@ -279,18 +322,26 @@ const Events = () => {
 
                   {/* Description */}
                   <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
-                    {event.description}
+                    {event.description.length > 150 
+                      ? `${event.description.substring(0, 150)}...` 
+                      : event.description
+                    }
                   </p>
 
                   {/* Features Preview */}
-                  <div className="space-y-1 mb-6">
+                  <div className="space-y-1 mb-6 h-20 overflow-hidden">
                     <div className="text-xs text-green-400 font-mono uppercase tracking-wider mb-2">
                       Key Features:
                     </div>
                     {event.features.slice(0, 3).map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-center text-xs">
-                        <div className="w-1 h-1 bg-cyan-400 mr-2"></div>
-                        <span className="text-gray-400">{feature}</span>
+                      <div key={fIndex} className="flex items-start text-xs h-4">
+                        <div className="w-1 h-1 bg-cyan-400 mr-2 mt-1.5 flex-shrink-0"></div>
+                        <span className="text-gray-400 leading-tight line-clamp-1">
+                          {feature.length > 60 
+                            ? `${feature.substring(0, 60)}...` 
+                            : feature
+                          }
+                        </span>
                       </div>
                     ))}
                     {event.features.length > 3 && (
@@ -304,7 +355,7 @@ const Events = () => {
                   <button className="w-full cyber-button py-3 font-mono text-sm uppercase tracking-wider group-hover:scale-105 transition-transform duration-300">
                     <span className="terminal-prompt flex items-center justify-center">
                       <i className="fas fa-terminal mr-2"></i>
-                      Access Event
+                      ./explore_event
                     </span>
                   </button>
                 </div>
@@ -317,7 +368,7 @@ const Events = () => {
         </div>
 
         {/* Enhanced Gallery Section with Horizontal Scroll */}
-        <AnimateOnScroll animation="fadeInUp" delay={300}>
+        <AnimateOnScroll animation="fadeInUp" delay={50}>
           <div className="mb-16">
             <div className="text-center mb-12">
               <div className="glass-dark p-6 border border-green-400/30 max-w-2xl mx-auto">
@@ -387,9 +438,53 @@ const Events = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
+                {/* First set of images */}
                 {eventGallery.map((image, index) => (
                   <div
-                    key={index}
+                    key={`original-${index}`}
+                    className="group relative flex-shrink-0 w-64 h-64 cursor-pointer will-change-transform"
+                    onClick={() => openImageModal(image, index)}
+                  >
+                    {/* Image Container */}
+                    <div className="w-full h-full relative overflow-hidden cyber-card border border-green-400/30 hover:border-green-400 transition-all duration-300">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        style={{ imageRendering: "crisp-edges" }}
+                      />
+
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="text-center">
+                          <i className="fas fa-expand text-green-400 text-3xl mb-2"></i>
+                          <p className="text-green-400 font-mono text-sm">
+                            {image.category}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Category Badge */}
+                      <div className="absolute top-2 right-2 bg-black/70 backdrop-blur-sm px-2 py-1 border border-green-400/50">
+                        <span className="text-green-400 font-mono text-xs">
+                          {image.category}
+                        </span>
+                      </div>
+
+                      {/* Corner Brackets */}
+                      <div className="absolute top-1 left-1 w-4 h-4 border-l-2 border-t-2 border-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute top-1 right-1 w-4 h-4 border-r-2 border-t-2 border-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-1 left-1 w-4 h-4 border-l-2 border-b-2 border-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-1 right-1 w-4 h-4 border-r-2 border-b-2 border-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+                ))}
+                
+                {/* Duplicate set of images for infinite scroll */}
+                {eventGallery.map((image, index) => (
+                  <div
+                    key={`duplicate-${index}`}
                     className="group relative flex-shrink-0 w-64 h-64 cursor-pointer will-change-transform"
                     onClick={() => openImageModal(image, index)}
                   >
@@ -566,6 +661,9 @@ const Events = () => {
                                       alt: `${selectedEvent.title} ${
                                         index + 1
                                       }`,
+                                      category: selectedEvent.title,
+                                      gallery: selectedEvent.gallery,
+                                      currentIndex: index
                                     })
                                   }
                                 >
@@ -622,13 +720,6 @@ const Events = () => {
                       )}
                     </div>
                   </div>
-
-                  {/* Action Button */}
-                  <div className="flex justify-center mt-8 pt-8 border-t border-green-400/30">
-                    <button className="cyber-button-outline py-3 px-8 font-mono uppercase tracking-wider">
-                      <span className="terminal-prompt">Learn More</span>
-                    </button>
-                  </div>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -638,11 +729,11 @@ const Events = () => {
         {/* Enhanced Image Modal with Navigation */}
         {selectedImage && (
           <div
-            className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 pt-20"
+            className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
             <div
-              className="relative max-w-5xl w-full max-h-full"
+              className="relative max-w-4xl w-full max-h-full flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -672,41 +763,47 @@ const Events = () => {
               </button>
 
               {/* Image Container */}
-              <div className="relative">
+              <div className="flex-1 flex items-center justify-center mb-20">
                 <img
                   src={selectedImage.src}
                   alt={selectedImage.alt}
-                  className="max-w-full max-h-[70vh] object-contain mx-auto border-2 border-green-400/50 shadow-2xl shadow-green-400/25"
+                  className="max-w-full max-h-[60vh] object-contain border-2 border-green-400/50 shadow-2xl shadow-green-400/25"
                 />
+              </div>
 
-                {/* Image Info Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-sm border-t border-green-400/50 p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-green-400 font-mono text-lg mb-1">
-                        {selectedImage.alt}
-                      </h3>
-                      <p className="text-gray-400 text-sm">
-                        Category:{" "}
-                        <span className="text-blue-400">
-                          {selectedImage.category}
-                        </span>
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-gray-400 text-sm">
-                        <span className="text-green-400">
-                          {currentGalleryIndex + 1}
-                        </span>{" "}
-                        of{" "}
-                        <span className="text-green-400">
-                          {eventGallery.length}
-                        </span>
-                      </p>
-                      <p className="text-xs text-gray-500 mt-1">
-                        Use arrow keys to navigate
-                      </p>
-                    </div>
+              {/* Image Info Footer - Fixed at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-sm border-t border-green-400/50 p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-green-400 font-mono text-lg mb-1">
+                      {selectedImage.alt}
+                    </h3>
+                    <p className="text-gray-400 text-sm">
+                      Category:{" "}
+                      <span className="text-blue-400">
+                        {selectedImage.category}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-400 text-sm">
+                      <span className="text-green-400">
+                        {selectedImage.gallery 
+                          ? (selectedImage.currentIndex + 1)
+                          : (currentGalleryIndex + 1)
+                        }
+                      </span>{" "}
+                      of{" "}
+                      <span className="text-green-400">
+                        {selectedImage.gallery 
+                          ? selectedImage.gallery.length
+                          : eventGallery.length
+                        }
+                      </span>
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Use arrow keys to navigate
+                    </p>
                   </div>
                 </div>
               </div>

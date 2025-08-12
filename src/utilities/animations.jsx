@@ -5,26 +5,26 @@ import { useState, useEffect, useRef } from 'react';
 export const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.25 }
 };
 
 export const fadeInLeft = {
   initial: { opacity: 0, x: -60 },
   animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.25 }
 };
 
 export const fadeInRight = {
   initial: { opacity: 0, x: 60 },
   animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.25 }
 };
 
 export const staggerContainer = {
   initial: {},
   animate: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.08
     }
   }
 };
@@ -102,7 +102,7 @@ export const AnimateOnScroll = ({ children, animation = 'fadeIn', delay = 0, cla
   return (
     <div
       ref={ref}
-      className={`transition-all duration-600 ease-out ${className}`}
+      className={`transition-all duration-250 ease-out ${className}`}
       style={{
         opacity: isVisible ? selectedAnimation.animate.opacity : selectedAnimation.initial.opacity,
         transform: `translateY(${isVisible ? selectedAnimation.animate.y || 0 : selectedAnimation.initial.y || 0}px) translateX(${isVisible ? selectedAnimation.animate.x || 0 : selectedAnimation.initial.x || 0}px) scale(${isVisible ? selectedAnimation.animate.scale || 1 : selectedAnimation.initial.scale || 1})`,
